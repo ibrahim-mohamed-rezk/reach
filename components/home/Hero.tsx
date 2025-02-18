@@ -1,5 +1,6 @@
 "use client";
 
+
 const Hero = () => {
   return (
     <div className="w-full bg-black">
@@ -14,10 +15,10 @@ const Hero = () => {
               Agency
             </span>
           </div>
-          <div className="text-center text-white text-3xl font-normal font-['Inter']">
+          <div className="text-center text-white text-3xl font-normal mt-[25px] font-['Inter']">
             Crafting Digital Masterpieces, Daily
           </div>
-          <div>
+          <div className="mt-[40px] cursor-pointer hover:scale-105 duration-300 rotate-animation">
             <svg
               width="126"
               height="126"
@@ -28,6 +29,7 @@ const Hero = () => {
               <path
                 d="M68.2212 62.9239L54.4994 49.1868L54.4994 43.5738L59.5897 43.5738L78.9182 62.9239L59.5897 82.2741L54.4994 82.2741L54.4994 76.661L68.2212 62.9239Z"
                 fill="white"
+                className=""
               />
               <path
                 d="M58.9456 112.782L59.8264 113.609L57.9782 115.446L60.2451 116.615L59.7201 117.659L57.466 116.492L57.0771 119.048L55.8505 118.861L56.2393 116.306L53.7402 116.749L53.5496 115.596L56.0615 115.154L54.8432 112.851L55.9301 112.324L57.1229 114.623L58.9456 112.782Z"

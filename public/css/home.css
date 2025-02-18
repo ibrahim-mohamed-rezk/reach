@@ -1,0 +1,25 @@
+@keyframes rotate-wheel {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-wheel-reversed {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.rotate-animation {
+  animation: rotate-wheel 15s linear infinite;
+}
+
+.rotate-animation-reversed {
+  animation: rotate-wheel-reversed 15s linear infinite;
+}

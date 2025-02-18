@@ -1,4 +1,5 @@
 import Hero from "@/components/home/Hero";
+import "@/public/css/home.css";
 
 export default function Home() {
   return (
