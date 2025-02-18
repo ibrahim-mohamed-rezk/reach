@@ -23,3 +23,11 @@
 .rotate-animation-reversed {
   animation: rotate-wheel-reversed 15s linear infinite;
 }
+
+.fill-svg-orange:hover .orange-svg path {
+  fill: #f3801e;
+}
+
+.bg-hover-animation-container:hover .bg-hover-animation {
+  width: 100%;
+}
