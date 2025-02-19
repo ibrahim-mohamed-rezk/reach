@@ -31,3 +31,20 @@
 .bg-hover-animation-container:hover .bg-hover-animation {
   width: 100%;
 }
+
+.hover-to-animate:hover .rightSape {
+  scale: 150%;
+  bottom: -150px;
+  right: -700px;
+  rotate: 2deg;
+}
+
+.hover-to-animate:hover .leftShape {
+  scale: 150%;
+  bottom: -210px;
+  rotate: 2deg;
+}
+
+.hover-to-animate:hover .centeredCircle {
+  transform: translateY(-30%);
+}

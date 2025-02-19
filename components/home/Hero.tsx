@@ -4,12 +4,12 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="w-full bg-black ">
-      <div className="container mx-auto">
-        <div className="w-full relative">
+    <div className="w-full bg-black  ">
+      <div className="container mx-auto overflow-hidden">
+        <div className="w-full relative selection hover-to-animate">
           <div className="w-full flex items-center justify-center flex-col pt-[195px] pb-[390px]">
             <Link
-              href="/about"
+              href="/"
               className="w-full max-w-[clamp(749px,39.0104167vw,749px)] h-[clamp(125px,6.5104167vw,125px)] relative gap-7 flex items-center justify-center bg-hover-animation-container"
             >
               <span className="text-white text-[clamp(103.53px,5.39218vw,103.53px)] font-semibold font-['Inter'] z-10">
@@ -23,7 +23,7 @@ const Hero = () => {
             <div className="text-center text-white text-3xl font-normal mt-[25px] font-['Inter']">
               Crafting Digital Masterpieces, Daily
             </div>
-            <div className="mt-[40px] w-fit cursor-pointer hover:scale-110 duration-200 flex items-center justify-center fill-svg-orange relative">
+            <div className="mt-[40px] w-fit cursor-pointer hover:scale-110 duration-200 flex items-center justify-center fill-svg-orange relative z-40">
               <svg
                 className="rotate-animation"
                 width="126"
@@ -163,7 +163,7 @@ const Hero = () => {
                   fill-opacity="0.2"
                 />
               </svg>
-              <svg className="absolute top-0 left-0 orange-svg">
+              <svg className="absolute top-0 left-0 orange-svg z-10">
                 <path
                   d="M68.2212 62.9239L54.4994 49.1868L54.4994 43.5738L59.5897 43.5738L78.9182 62.9239L59.5897 82.2741L54.4994 82.2741L54.4994 76.661L68.2212 62.9239Z"
                   fill="white"
@@ -173,11 +173,11 @@ const Hero = () => {
           </div>
 
           {/* abslute animation icons  */}
-          <div className="absolute bottom-0 right-0">
+          <div className="absolute rightSape bottom-[-495px] right-[-270px] duration-[2000ms] ease-in-out">
             <svg
-              width="750"
-              height="600"
-              viewBox="0 0 750 600"
+              width="900"
+              height="1104"
+              viewBox="0 0 900 1104"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -187,6 +187,26 @@ const Hero = () => {
                 stroke-width="4"
               />
             </svg>
+          </div>
+
+          <div className="absolute leftShape bottom-[-215px] left-[-385px] duration-[2000ms] ease-in-out">
+            <svg
+              width="617"
+              height="574"
+              viewBox="0 0 617 574"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M140.552 3L614.5 371.5V569.5L4 102L140.552 3Z"
+                stroke="#F3801E"
+                stroke-width="4"
+              />
+            </svg>
+          </div>
+
+          <div className="centeredCircle absolute top-full w-full left-0 duration-[2000ms] ease-in-out flex items-center justify-center">
+            <div className="w-full flex h-[clamp(200px,60.104167vw,1154px)] opacity-60 bg-[#f3801e] rounded-full blur-[clamp(200px,43.64586vw,838px)]" />
           </div>
         </div>
       </div>
