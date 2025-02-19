@@ -7,20 +7,20 @@ const Hero = () => {
     <div className="w-full bg-black  ">
       <div className="container mx-auto overflow-hidden">
         <div className="w-full relative selection hover-to-animate">
-          <div className="w-full flex items-center justify-center flex-col pt-[195px] pb-[390px]">
+          <div className="w-full px-[10px] md:px0 flex items-center justify-center flex-col pt-[clamp(50px,10.15625vw,195px)] pb-[clamp(150px,20.3125vw,390px)]">
             <Link
               href="/"
-              className="w-full max-w-[clamp(749px,39.0104167vw,749px)] h-[clamp(125px,6.5104167vw,125px)] relative gap-7 flex items-center justify-center bg-hover-animation-container"
+              className=" px-[clamp(15px,1.5625vw,30px)] max-w-[749px] h-fit relative gap-[clamp(10px,1.458333vw,28px)] flex items-center justify-center bg-hover-animation-container"
             >
-              <span className="text-white text-[clamp(103.53px,5.39218vw,103.53px)] font-semibold font-['Inter'] z-10">
+              <span className="text-white text-[clamp(35px,5.39218vw,103.53px)] font-semibold font-['Inter'] z-10">
                 Reach
               </span>
-              <span className="text-white text-[clamp(103.53px,5.39218vw,103.53px)] font-normal font-['Inter'] z-10">
+              <span className="text-white text-[clamp(35px,5.39218vw,103.53px)] font-normal font-['Inter'] z-10">
                 Agency
               </span>
               <div className="w-0 duration-1000 hover:duration-1000 ease-in-out hover:ease-in-out absolute left-0 rounded-[10px]  h-[100%] bg-[#FF9437] z-0 bg-hover-animation "></div>
             </Link>
-            <div className="text-center text-white text-3xl font-normal mt-[25px] font-['Inter']">
+            <div className="text-center text-white text-[clamp(16px,1.5625vw,30px)] font-normal mt-[25px] font-['Inter']">
               Crafting Digital Masterpieces, Daily
             </div>
             <div className="mt-[40px] w-fit cursor-pointer hover:scale-110 duration-200 flex items-center justify-center fill-svg-orange relative z-40">
@@ -173,7 +173,7 @@ const Hero = () => {
           </div>
 
           {/* abslute animation icons  */}
-          <div className="absolute rightSape bottom-[-495px] right-[-270px] duration-[2000ms] ease-in-out">
+          <div className="absolute rightSape  duration-[2000ms] ease-in-out">
             <svg
               width="900"
               height="1104"
@@ -189,7 +189,7 @@ const Hero = () => {
             </svg>
           </div>
 
-          <div className="absolute leftShape bottom-[-215px] left-[-385px] duration-[2000ms] ease-in-out">
+          <div className="absolute leftShape duration-[2000ms] ease-in-out">
             <svg
               width="617"
               height="574"
