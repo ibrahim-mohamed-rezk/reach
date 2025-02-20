@@ -7,7 +7,13 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        DmSans: ["DM Sans", "system-ui"],
+        Inter: ["Inter", "system-ui"],
+        LeagueSpartan: ["League Spartan", "system-ui"],
+      },
+    },
   },
   plugins: [],
 } satisfies Config;

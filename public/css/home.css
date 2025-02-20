@@ -167,3 +167,14 @@
     rotate: 2deg;
   }
 }
+
+/* move fast section */
+.move-fast-container:hover .rotate-180deg {
+  transform: rotate(-180deg);
+  transform-origin: center;
+  scale: 1.02;
+}
+
+.move-fast-container:hover .move-to-top {
+  transform: translateY(-40px);
+}
