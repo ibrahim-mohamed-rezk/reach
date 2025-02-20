@@ -36,30 +36,30 @@ const MoveFast = () => {
                 <path
                   d="M7.33325 16.6669H25.9999"
                   stroke="white"
-                  stroke-width="2.66667"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2.66667"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M7.33325 16.6669H25.9999"
                   stroke="#F3801E"
-                  stroke-width="2.66667"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2.66667"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M16.6665 7.3335L25.9998 16.6668L16.6665 26.0002"
                   stroke="white"
-                  stroke-width="2.66667"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2.66667"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M16.6665 7.3335L25.9998 16.6668L16.6665 26.0002"
                   stroke="#F3801E"
-                  stroke-width="2.66667"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2.66667"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </div>
