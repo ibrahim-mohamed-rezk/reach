@@ -25,7 +25,11 @@ const Services = () => {
             {services.map((item) => {
               if (item.label === openedService) {
                 return (
-                  <div data-svg-wrapper>
+                  <div
+                    key={item.label}
+                    onClick={() => setOpenedService(item.label)}
+                    data-svg-wrapper
+                  >
                     <svg
                       width="274"
                       height="90"
@@ -98,7 +102,10 @@ const Services = () => {
                 );
               } else
                 return (
-                  <div className="h-[58.18px] px-[26.45px] py-[21.16px] bg-[#303030] rounded-[29.09px] border border-[#b0b0b0] justify-center items-center gap-[6.61px] inline-flex">
+                  <div
+                    key={item.label}
+                    className="h-[58.18px] px-[26.45px] py-[21.16px] bg-[#303030] rounded-[29.09px] border border-[#b0b0b0] justify-center items-center gap-[6.61px] inline-flex"
+                  >
                     <div className="text-white text-[clamp(12px,1vw,16px)] font-semibold font-['Inter']">
                       {item.label}
                     </div>
