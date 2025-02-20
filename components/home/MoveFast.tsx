@@ -17,7 +17,7 @@ const MoveFast = () => {
               flexible
             </span>
           </div>
-          <div className="max-w-7xl mx-auto text-center text-white/80 text-clamp(12px,1.04166665vw,20px) font-normal mt-[clamp(20px,2.5vw,48px)] font-DmSans leading-loose tracking-tight">
+          <div className="max-w-7xl mx-auto text-center text-white/80 text-[clamp(12px,1.04166665vw,21px)] font-normal mt-[clamp(20px,2.5vw,48px)] font-DmSans leading-loose tracking-tight">
             Speed fuels innovation. Never lag behind of technology. Stay ahead
             of your time. Stay flexible.
           </div>
