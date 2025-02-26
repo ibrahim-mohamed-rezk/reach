@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className=" w-full relative bg-[#F3801E]">
+    <div id="about" className=" w-full relative bg-[#F3801E]">
       <div className="container mx-auto">
         <div className="w-full bg-[#F3801E] py-[clamp(20px,2.08333vw,40px)] px-[clamp(15px,1.5625vw,30px)]">
           <div className="w-full bg-black px-[clamp(10px,5.20834vw,100px)] rounded-[clamp(17px,1.875vw,36px)] flex flex-col md:flex-row justify-start items-center gap-[26.67px] pt-[clamp(50px,7.42188vw,150px)] pb-[clamp(50px,4.5052083vw,91.5px)]">

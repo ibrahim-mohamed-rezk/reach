@@ -1,14 +1,20 @@
 "use client";
 
-import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import { Autoplay } from "swiper/modules";
+
+// import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="w-full bg-black  ">
+    <div className="w-full bg-black ">
       <div className="container mx-auto overflow-hidden">
         <div className="w-full relative selection hover-to-animate">
-          <div className="w-full px-[10px] md:px0 flex items-center justify-center flex-col pt-[clamp(50px,10.15625vw,195px)] pb-[clamp(150px,20.3125vw,390px)]">
-            <Link
+          <div className="w-full  px-[0px] md:px0 flex items-center justify-center flex-col pt-[clamp(50 px,10.15625vw,195px)] pb-[clamp(150 px,20.3125vw,390px)]">
+            {/* <Link
               href="/"
               className=" px-[clamp(15px,1.5625vw,30px)] max-w-[749px] h-fit relative gap-[clamp(10px,1.458333vw,28px)] flex items-center justify-center bg-hover-animation-container"
             >
@@ -169,11 +175,33 @@ const Hero = () => {
                   fill="white"
                 />
               </svg>
-            </div>
+            </div> */}
+            <Swiper
+              modules={[Autoplay]}
+              loop
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              className="w-full h-full"
+            >
+              <SwiperSlide>
+                <img
+                  className="w-full h-full"
+                  src="/images/ReachB2.png"
+                  alt=""
+                />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <img
+                  className="w-full h-full"
+                  src="/images/ReachB1.png"
+                  alt=""
+                />
+              </SwiperSlide>
+            </Swiper>
           </div>
 
           {/* abslute animation icons  */}
-          <div className="absolute rightSape  duration-[2000ms] ease-in-out">
+          {/* <div className="absolute rightSape  duration-[2000ms] ease-in-out">
             <svg
               width="900"
               height="1104"
@@ -187,9 +215,9 @@ const Hero = () => {
                 stroke-width="4"
               />
             </svg>
-          </div>
+          </div> */}
 
-          <div className="absolute leftShape duration-[2000ms] ease-in-out">
+          {/* <div className="absolute leftShape duration-[2000ms] ease-in-out">
             <svg
               width="617"
               height="574"
@@ -203,7 +231,7 @@ const Hero = () => {
                 stroke-width="4"
               />
             </svg>
-          </div>
+          </div> */}
 
           <div className="centeredCircle absolute top-full w-full left-0 duration-[2000ms] ease-in-out flex items-center justify-center">
             <div className="w-full flex h-[clamp(200px,60.104167vw,1154px)] opacity-60 bg-[#f3801e] rounded-full blur-[clamp(200px,43.64586vw,838px)]" />

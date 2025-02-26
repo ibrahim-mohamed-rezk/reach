@@ -15,7 +15,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black py-16 px-4 sm:px-6 lg:px-8">
+    <div id="services" className="min-h-screen bg-black py-16 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
         <h2 className="text-center text-white text-4xl sm:text-5xl md:text-6xl lg:text-[103.53px] font-semibold font-['Inter'] mb-12">
           Our Services

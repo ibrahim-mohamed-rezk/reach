@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/home/Header";
+import Footer from "@/components/footer/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Reach Agency",
@@ -17,9 +19,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="w-full">
+      <body className="w-full relative">
         <Header />
         <main>{children}</main>
+        <Footer/>
+        <ScrollToTop />
       </body>
     </html>
   );

@@ -10,10 +10,10 @@ const Header = () => {
 
   const navItems = [
     { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "Portfolio", href: "/portfolio" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "About", href: "/about" },
+    { label: "Services", href: "#services" },
+    { label: "Clients", href: "#clients" },
+    { label: "Pricing", href: "#pricing" },
+    { label: "About", href: "#about" },
   ];
 
   return (
