@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header className=" mx-auto w-full h-[clamp(90px,7.34375vw,120px)] bg-black flex justify-center items-center overflow-hidden">
-      <div className="container mx-auto">
+      <div className="w-full md:px-[100px] mx-auto">
         <div className="grow px-[8px] md:px-0 w-full shrink basis-0 h-[59.68px] justify-between items-center inline-flex">
           {/* logo */}
           <Link

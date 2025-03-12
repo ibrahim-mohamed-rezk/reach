@@ -1,20 +1,19 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+// import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import "swiper/css";
-import { Autoplay } from "swiper/modules";
-
-// import Link from "next/link";
+// import "swiper/css";
+// import { Autoplay } from "swiper/modules";
+import Link from "next/link";
 
 const Hero = () => {
   return (
     <div className="w-full bg-black ">
-      <div className="container mx-auto overflow-hidden">
-        <div className="w-full relative selection hover-to-animate">
-          <div className="w-full  px-[0px] md:px0 flex items-center justify-center flex-col pt-[clamp(50 px,10.15625vw,195px)] pb-[clamp(150 px,20.3125vw,390px)]">
-            {/* <Link
+      <div className="wfull mx-auto overflow-hidden">
+        <div className="w-full h-screen max-h-[1100px] relative selection hover-to-animate">
+          <div className="w-full h-full px-[0px] md:px0 flex items-center justify-center flex-col pt-[clamp(50 px,10.15625vw,195px)] pb-[clamp(150 px,20.3125vw,390px)]">
+            <Link
               href="/"
               className=" px-[clamp(15px,1.5625vw,30px)] max-w-[749px] h-fit relative gap-[clamp(10px,1.458333vw,28px)] flex items-center justify-center bg-hover-animation-container"
             >
@@ -175,8 +174,8 @@ const Hero = () => {
                   fill="white"
                 />
               </svg>
-            </div> */}
-            <Swiper
+            </div>
+            {/* <Swiper
               modules={[Autoplay]}
               loop
               autoplay={{ delay: 5000, disableOnInteraction: false }}
@@ -197,11 +196,11 @@ const Hero = () => {
                   alt=""
                 />
               </SwiperSlide>
-            </Swiper>
+            </Swiper> */}
           </div>
 
           {/* abslute animation icons  */}
-          {/* <div className="absolute rightSape  duration-[2000ms] ease-in-out">
+          <div className="absolute rightSape  duration-[2000ms] ease-in-out">
             <svg
               width="900"
               height="1104"
@@ -215,9 +214,9 @@ const Hero = () => {
                 stroke-width="4"
               />
             </svg>
-          </div> */}
+          </div>
 
-          {/* <div className="absolute leftShape duration-[2000ms] ease-in-out">
+          <div className="absolute leftShape duration-[2000ms] ease-in-out">
             <svg
               width="617"
               height="574"
@@ -231,10 +230,39 @@ const Hero = () => {
                 stroke-width="4"
               />
             </svg>
-          </div> */}
+          </div>
 
           <div className="centeredCircle absolute top-full w-full left-0 duration-[2000ms] ease-in-out flex items-center justify-center">
-            <div className="w-full flex h-[clamp(200px,60.104167vw,1154px)] opacity-60 bg-[#f3801e] rounded-full blur-[clamp(200px,43.64586vw,838px)]" />
+            <div className="w-[clamp(200px,60.104167vw,1154px)] h-[clamp(200px,60.104167vw,1154px)] opacity-60 bg-[#f3801e] rounded-full blur-[clamp(150px,43.64586vw,338px)]" />
+          </div>
+
+          {/* ramadan bg image */}
+          <div className="absolute top-0 z-0 opacity-20 w-full h-full left-0 ease-in-out flex items-center justify-center">
+            <div className="w-full h-full bg-gradient-to-t from-black to-transparent">
+              <img
+                className="w-full h-full object-cover mix-blend-overlay "
+                src="/images/ramadanBg.png"
+                alt="ramadan"
+              />
+            </div>
+          </div>
+
+          {/* ramadan top right image */}
+          <div className="absolute top-0 right-0 z-0 opacity-80 ease-in-out flex items-center justify-center">
+            <img
+              className="mix-blend-overlay "
+              src="/images/ramadanRight.png"
+              alt="ramadan"
+            />
+          </div>
+
+          {/* ramadan top left image */}
+          <div className="hidden absolute top-0 left-0 opacity-80 z-0 ease-in-out md:flex items-center justify-center">
+            <img
+              className="mix-blend-overlay "
+              src="/images/ramadanLeft.png"
+              alt="ramadan"
+            />
           </div>
         </div>
       </div>

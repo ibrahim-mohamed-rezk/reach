@@ -3,7 +3,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="bg-[#000] mt-[-10px] py-8">
-      <div className="container mx-auto">
+      <div className="mx-[5px] md:mx-[100px]">
         <div className="bg-[#000] text-white rounded-[15px] border border-[#39393B] p-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="mb-8 md:mb-0">
@@ -14,10 +14,11 @@ const Footer = () => {
                   alt="Logo"
                 />
               </div>
-              <p className="text-[#b7b7b7] text-lg mt-2 font-bold leading-normal">
-                Elevate your football career with Reach. We connect players and
-                agents, reshaping the future of the sport. Join our platform to
-                revolutionize football.
+              <p className="text-[#b7b7b7] text-lg mt-2 font-semibold leading-normal">
+                At <span className="font-bold">Reach</span> Agency, we build
+                genuine partnerships to drive lasting growth through innovative
+                programming and marketing strategies, empowering businesses to
+                become industry leaders.
               </p>
             </div>
 

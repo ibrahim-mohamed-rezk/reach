@@ -3,7 +3,7 @@ import React from "react";
 const Clients = () => {
   return (
     <div id="clients" className="w-full bg-black pb-[70px]">
-      <div className="container mx-auto px-4 py-16 relative">
+      <div className=" mx-[5px] md:mx-[100px] px-4 py-16 relative">
         <div className="z-10 absolute overflow-hidden w-full h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
           <h2
             style={{ WebkitTextStroke: "1px #ffffff7d" }}
