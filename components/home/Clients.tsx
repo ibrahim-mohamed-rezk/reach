@@ -2,7 +2,7 @@ import React from "react";
 
 const Clients = () => {
   return (
-    <div id="clients" className="w-full bg-black pb-[70px]">
+    <div id="clients" className="w-full px-[clamp(10px,2.08333vw,40px)] pb-[clamp(100px,10.15625vw,200px)] mx-auto flex flex-col justify-start items-center gap-[clamp(40px,4.1666666vw,150px)]">
       <div className=" mx-[5px] md:mx-[100px] px-4 py-16 relative">
         <div className="z-10 absolute overflow-hidden w-full h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
           <h2
@@ -12,6 +12,8 @@ const Clients = () => {
             Our Clients
           </h2>
         </div>
+
+
         <div className="max-w-3xl mx-auto text-center mb-12 px-4">
           <h2 className="text-center text-white text-[clamp(40px,5vw,85px)] font-bold font-['Inter'] leading-[1.1]">
             Our Clients
@@ -22,6 +24,7 @@ const Clients = () => {
             ferrars besides cottage.
           </p>
         </div>
+        
         <div className="flex flex-wrap justify-center items-center gap-8 w-full relative">
           <div className="w-full z-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[290px] bg-[#f3801e] rounded-full blur-[160px]" />
 
