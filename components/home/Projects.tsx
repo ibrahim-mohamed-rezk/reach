@@ -6,21 +6,22 @@ const Projects = () => {
       </h2>
 
       <div className=" flex w-full flex-col gap-[clamp(20px,3.125vw,80px)]">
-        {[1, 2, 3].map((item) => (
-          <div className="flex items-center justify-between gap-[clamp(10px,4.0104167vw,100px)]">
-            <div className="w-[35%]">
-              <div className="flex items-center gap-4 mb-6">
+        {[1, 2, 3].map((index) => (
+          <div key={index} className="flex items-center justify-between">
+            <div className=" w-[40%] md:w-[37%]">
+              <div className="flex items-center gap-[clamp(8px,0.833334vw,30px)] mb-[clamp(8px,1.25vw,50px)]">
                 <img
-                  className="w-12 h-12 md:w-16 md:h-14 rounded-md"
-                  src="https://placehold.co/61x55"
+                  className="w-[clamp(30px,3.333335vw,20px)] h-[clamp(30px,3.333335vw,20px)] rounded-md"
+                  src="/images/squareLogo.svg"
                   alt="Project logo"
                 />
-                <h3 className="text-2xl md:text-3xl text-white font-normal">
+
+                <h3 className="text-[clamp(14px,1.5625vw,100px)] text-white font-normal">
                   Reach Agency
                 </h3>
               </div>
 
-              <p className="text-white text-base font-semibold mb-8">
+              <p className="text-white text-[clamp(6px,0.833334vw,30px)] font-semibold mb-[clamp(8px,1.66666667vw,50px)]">
                 We build fast, responsive, and scalable websites tailored to
                 your business goals. Whether you need a corporate site,
                 portfolio, or e-commerce platform, we provide comprehensive
@@ -35,21 +36,27 @@ const Projects = () => {
               </button>
             </div>
 
-            <div className="overflow-hidden w-[55%] rounded-3xl p-6 relative">
+            <div className="overflow-hidden w-[57%] rounded-[clamp(6px,0.625vw,20px)] p-[clamp(4px,1.25vw,60px)] relative">
               <img
                 className="w-full h-auto aspect-[16/9] rounded-[clamp(6px,0.625vw,20px)] object-cover"
                 src="https://placehold.co/496x279"
                 alt="Project thumbnail"
               />
-              <div className="absolute top-0 left-6 flex space-x-4">
-                <div className="bg-black rounded py-4 px-2 shadow-md -mt-5">
-                  <div className="text-white text-center font-bold">
+              <div className="absolute top-0 left-[clamp(7px,2.6041667vw,50px)] flex space-x-4">
+                <div className="relative">
+                  <svg
+                    className="w-[clamp(50px,5.15625vw,200px)] h-[clamp(40px,8.02084vw,300px)]"
+                    viewBox="0 0 99 154"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 5C0 2.23858 2.23858 0 5 0H94C96.7614 0 99 2.23858 99 5V148.763C99 153.24 93.5662 155.461 90.4306 152.264L53.0694 114.176C51.1093 112.178 47.8907 112.178 45.9306 114.176L8.56942 152.264C5.43379 155.461 0 153.24 0 148.763V5Z"
+                      fill="black"
+                    />
+                  </svg>
+                  <div className="absolute text-[clamp(5px,0.9975vw,20px)] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center font-bold w-full">
                     Branding
-                  </div>
-                </div>
-                <div className="bg-black rounded py-4 px-2 shadow-md -mt-5">
-                  <div className="text-white text-center font-bold">
-                    Programing
                   </div>
                 </div>
               </div>

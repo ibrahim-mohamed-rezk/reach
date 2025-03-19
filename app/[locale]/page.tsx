@@ -7,8 +7,10 @@ import Hero from "@/components/home/Hero";
 import MoveFast from "@/components/home/MoveFast";
 import Projects from "@/components/home/Projects";
 import Services from "@/components/home/Services";
+import { getApi } from "@/libs/axios/backend";
+import { HomeData } from "@/libs/helpers/types";
 import "@/public/css/home.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const aboutContainerRef = useRef<HTMLDivElement | null>(null);
@@ -23,6 +25,19 @@ export default function Home() {
 
     window.addEventListener("scroll", () => handleScroll(aboutContainerRef));
   }, []);
+
+  const [homeData, setHomeData] = useState<HomeData>({});
+  // feach HomeData from api
+  useEffect(() => {
+    const fetchHomeData = async () => {
+      const response = await getApi("/api/home");
+      const data = await response.data;
+      setHomeData(data);
+    };
+    fetchHomeData();
+  }, []);
+
+  console.log(homeData);
 
   return (
     <div className="w-full">
@@ -40,7 +55,7 @@ export default function Home() {
         <Services />
         <Clients />
         <Projects />  
-        <Blogs />
+        <Blogs blogs={homeData?.featured_posts || []} />
       </div>
       <div className="z-[4] sticky top-0 max-h-screen hide-scrollbar"></div>
     </div>
