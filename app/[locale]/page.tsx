@@ -54,7 +54,7 @@ export default function Home() {
       <div className="z-[3] relative bg-black">
         <Services />
         <Clients />
-        <Projects />  
+        <Projects projects={homeData?.featured_projects || []} />  
         <Blogs blogs={homeData?.featured_posts || []} />
       </div>
       <div className="z-[4] sticky top-0 max-h-screen hide-scrollbar"></div>
