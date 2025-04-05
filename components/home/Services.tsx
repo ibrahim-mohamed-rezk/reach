@@ -8,7 +8,7 @@ const Services = () => {
 
   const services = [
     { label: "Programming" },
-    { label: "Digital Marketing " },
+    { label: "Digital Marketing" },
     { label: "Advertising" },
     { label: "Social Media" },
   ];

@@ -5,9 +5,9 @@ import useImageUrl from "@/libs/hooks/useImageUrl";
 const ProjecCard = ({ project }: { project: FeaturedProject }) => {
   const imageUrl = useImageUrl();
   return (
-    <div>
+    <div className="w-full">
       <div className="flex items-center justify-between">
-        <div className=" w-[40%] md:w-[37%]">
+        <div className=" w-[40%]">
           <div className="flex items-center gap-[clamp(8px,0.833334vw,30px)] mb-[clamp(8px,1.25vw,50px)]">
             <img
               className="w-[clamp(25px,3.333335vw,200px)] h-[clamp(25px,3.333335vw,200px)] rounded-md"
