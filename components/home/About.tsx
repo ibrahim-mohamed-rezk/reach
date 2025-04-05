@@ -46,18 +46,19 @@ const About = () => {
       document.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
+
   return (
     <div id="about" className=" w-full relative bg-[#F3801E]">
       <div className="w-full mx-auto">
         <div className="w-full relative bg-[#F3801E] py-[clamp(20px,2.08333vw,40px)] px-[clamp(15px,1.5625vw,30px)]">
           <div className="w-full bg-black px-[clamp(10px,5.20834vw,100px)] rounded-[clamp(17px,1.875vw,36px)] flex flex-col md:flex-row justify-start items-center gap-[26.67px] pt-[clamp(50px,7.42188vw,150px)] pb-[clamp(50px,4.5052083vw,91.5px)]">
             <div className="w-full md:w-1/2 flex-col justify-start items-start gap-[33.33px] inline-flex">
-              <div className="text-[clamp(32px,3.33333vw,64px)] font-['Inter'] leading-tight">
+              <div className="text-[clamp(20px,3.33333vw,64px)] font-['Inter'] leading-tight">
                 <span className="text-white font-normal">About </span>
                 <span className="text-[#f3801e] font-medium">Reach</span>
               </div>
               <div className="self-stretch">
-                <p className="text-white/80 text-[clamp(16px,1.11111vw,21.33px)] font-normal font-['Inter'] leading-relaxed tracking-tight">
+                <p className="text-white/80 text-[clamp(8px,1.11111vw,21.33px)] font-normal font-['Inter'] leading-relaxed tracking-tight">
                   At <span className="font-bold">Reach</span> Agency, we
                   understand that every business is unique. But when it comes to
                   achieving lasting growth, we believe in a core set of
@@ -79,34 +80,80 @@ const About = () => {
                 {
                   title: "Innovation",
                   icon: (
-                    <div className="w-[158px] h-[158px] relative">
-                      <div className="w-[52.67px] h-[52.67px] left-[85.58px] top-[26.33px] absolute rounded-full border-4 border-[#f3801e]" />
-                      <div className="w-[39.50px] h-[39.50px] left-[59.25px] top-[92.17px] absolute rounded-full border-4 border-[#f3801e]" />
-                      <div className="w-[32.92px] h-[32.92px] left-[26.33px] top-[46.08px] absolute rounded-full border-4 border-[#f3801e]" />
-                    </div>
+                    <svg
+                      className="w-[clamp(80px,8.2291666vw,500px)] h-[clamp(80px,8.2291666vw,500px)]"
+                      viewBox="0 0 158 159"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="111.917"
+                        cy="53.0003"
+                        r="26.3333"
+                        stroke="#33363F"
+                        stroke-width="5.33333"
+                      />
+                      <circle
+                        cx="111.917"
+                        cy="53.0003"
+                        r="26.3333"
+                        stroke="#F3801E"
+                        stroke-width="5.33333"
+                      />
+                      <circle
+                        cx="79.0007"
+                        cy="112.25"
+                        r="19.75"
+                        stroke="#33363F"
+                        stroke-width="5.33333"
+                      />
+                      <circle
+                        cx="79.0007"
+                        cy="112.25"
+                        r="19.75"
+                        stroke="#F3801E"
+                        stroke-width="5.33333"
+                      />
+                      <circle
+                        cx="42.7923"
+                        cy="62.8753"
+                        r="16.4583"
+                        stroke="#33363F"
+                        stroke-width="5.33333"
+                      />
+                      <circle
+                        cx="42.7923"
+                        cy="62.8753"
+                        r="16.4583"
+                        stroke="#F3801E"
+                        stroke-width="5.33333"
+                      />
+                    </svg>
                   ),
                 },
                 {
                   title: "Technology",
                   icon: (
-                    <div className="w-[158.67px] h-[158.67px] relative">
-                      <div className="left-[30.39px] top-[30.39px] absolute">
-                        <svg
-                          width="99"
-                          height="99"
-                          viewBox="0 0 99 99"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M92.0078 25.3498C87.6087 17.5392 81.1274 11.0578 73.3168 6.65872C72.0128 7.88881 70.9589 9.3811 70.2394 11.0513C77.5614 15.0585 83.6081 21.1052 87.6152 28.4272C89.2855 27.7077 90.7777 26.6538 92.0078 25.3498ZM57.7934 6.54289C55.0564 6.00478 52.2274 5.72274 49.3326 5.72274C25.2469 5.72274 5.72152 25.2481 5.72152 49.3338C5.72152 73.4196 25.2469 92.945 49.3326 92.945C73.4184 92.945 92.9437 73.4196 92.9437 49.3338C92.9437 46.4391 92.6617 43.6102 92.1236 40.8732C93.856 40.1869 95.4987 39.3228 97.0291 38.3035C97.8456 41.8485 98.2771 45.5408 98.2771 49.3338C98.2771 76.3651 76.3639 98.2783 49.3326 98.2783C22.3014 98.2783 0.388184 76.3651 0.388184 49.3338C0.388184 22.3026 22.3014 0.389404 49.3326 0.389404C53.1257 0.389404 56.818 0.820885 60.3632 1.63744C59.3438 3.16781 58.4798 4.81046 57.7934 6.54289Z"
-                            fill="#F3801E"
-                          />
-                        </svg>
-                      </div>
-                      <div className="w-[26.44px] h-[26.44px] left-[99.17px] top-[33.06px] absolute bg-[#f3801e] rounded-full" />
+                    <div className="w-[clamp(80px,8.2291666vw,500px)] h-[clamp(80px,8.2291666vw,500px)] relative">
+                      <svg
+                        className="w-[clamp(80px,8.2291666vw,500px)] h-[clamp(80px,8.2291666vw,500px)]"
+                        viewBox="0 0 159 159"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M122.008 55.3498C117.609 47.5392 111.127 41.0578 103.317 36.6587C102.013 37.8888 100.959 39.3811 100.239 41.0513C107.561 45.0585 113.608 51.1052 117.615 58.4272C119.285 57.7077 120.778 56.6538 122.008 55.3498ZM87.7934 36.5429C85.0564 36.0048 82.2274 35.7227 79.3326 35.7227C55.2469 35.7227 35.7215 55.2481 35.7215 79.3338C35.7215 103.42 55.2469 122.945 79.3326 122.945C103.418 122.945 122.944 103.42 122.944 79.3338C122.944 76.4391 122.662 73.6102 122.124 70.8732C123.856 70.1869 125.499 69.3228 127.029 68.3035C127.846 71.8485 128.277 75.5408 128.277 79.3338C128.277 106.365 106.364 128.278 79.3326 128.278C52.3014 128.278 30.3882 106.365 30.3882 79.3338C30.3882 52.3026 52.3014 30.3894 79.3326 30.3894C83.1257 30.3894 86.818 30.8209 90.3632 31.6374C89.3438 33.1678 88.4798 34.8105 87.7934 36.5429Z"
+                          fill="#F3801E"
+                        />
+                        <circle
+                          cx="112.39"
+                          cy="46.2784"
+                          r="13.2222"
+                          fill="#F3801E"
+                        />
+                      </svg>
                     </div>
                   ),
                 },
@@ -114,8 +161,7 @@ const About = () => {
                   title: "Growth",
                   icon: (
                     <svg
-                      width="159"
-                      height="159"
+                      className="w-[clamp(80px,8.2291666vw,500px)] h-[clamp(80px,8.2291666vw,500px)]"
                       viewBox="0 0 159 159"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
