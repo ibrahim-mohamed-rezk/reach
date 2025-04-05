@@ -178,3 +178,7 @@
 .move-fast-container:hover .move-to-top {
   transform: translateY(-40px);
 }
+
+.move-fast-container:hover .animate-glow {
+  transform: translate(0px, 0px);
+}
