@@ -4,12 +4,14 @@ import { Link } from "@/i18n/navigation";
 import { getApi } from "@/libs/axios/backend";
 import { FeaturedPost, Meta } from "@/libs/helpers/types";
 
-type Props = {
+
+const Page = async ({
+  params,
+  searchParams,
+}: {
   params: { locale: string };
   searchParams?: { page?: string };
-};
-
-const Page = async ({ params, searchParams }: Props) => {
+}) => {
   const { locale } = params;
   const page = parseInt(searchParams?.page || "1");
   let loading = true;
