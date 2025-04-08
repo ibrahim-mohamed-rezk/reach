@@ -4,16 +4,15 @@ import { Link } from "@/i18n/navigation";
 import { getApi } from "@/libs/axios/backend";
 import { FeaturedPost, Meta } from "@/libs/helpers/types";
 
-const page = async ({
-  params,
-  searchParams,
-}: {
+type Props = {
   params: { locale: string };
-  searchParams: { page?: string };
-}) => {
-  let loading = true;
+  searchParams?: { page?: string };
+};
+
+const Page = async ({ params, searchParams }: Props) => {
   const { locale } = params;
   const page = parseInt(searchParams?.page || "1");
+  let loading = true;
 
   const getBlogs = async () => {
     try {
@@ -102,4 +101,4 @@ const page = async ({
   );
 };
 
-export default page;
+export default Page;
