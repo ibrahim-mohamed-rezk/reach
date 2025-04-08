@@ -5,7 +5,7 @@ import { getApi } from "@/libs/axios/backend";
 import { FeaturedPost, Meta } from "@/libs/helpers/types";
 import useImageUrl from "@/libs/hooks/useImageUrl";
 
-const page = async ({
+const Blogs = async ({
   params,
   searchParams,
 }: {
@@ -52,7 +52,8 @@ const page = async ({
             Welcome to the <br /> Hasten blog
           </div>
           <div className="text-center text-neutral-700 text-[clamp(10px,1.25vw,30px)] font-normal font-['Inter'] leading-relaxed max-w-[90%] md:max-w-[70%] lg:max-w-[60%]">
-            Invoicing and Business tips for small businesses <br /> and freelancers.
+            Invoicing and Business tips for small businesses <br /> and
+            freelancers.
           </div>
         </div>
       </div>
@@ -103,4 +104,4 @@ const page = async ({
   );
 };
 
-export default page;
+export default Blogs;
