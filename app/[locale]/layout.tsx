@@ -6,6 +6,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/footer/Footer";
 import "../globals.css";
 import ReduxProvider from "@/libs/store/reduxProvider";
+import { ToastContainer } from "react-toastify";
 
 export default async function LocaleLayout({
   children,
@@ -30,6 +31,15 @@ export default async function LocaleLayout({
               <main>{children}</main>
               <Footer />
               <ScrollToTop />
+              <ToastContainer
+                position="top-center"
+                autoClose={3000}
+                hideProgressBar
+                closeOnClick
+                closeButton={false}
+                pauseOnHover
+                theme="dark"
+              />
             </body>
           </NextIntlClientProvider>
         </ReduxProvider>

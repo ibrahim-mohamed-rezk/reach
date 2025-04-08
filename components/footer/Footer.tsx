@@ -1,19 +1,19 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 const Footer = () => {
   return (
     <footer className="bg-[#000] mt-[-10px] py-8">
       <div className="mx-[5px] md:mx-[100px]">
         <div className="bg-[#000] text-white rounded-[15px] border border-[#39393B] p-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="mb-8 md:mb-0">
-              <div className="flex items-center gap-2.5 mb-4">
+              <Link href="/" className="flex items-center gap-2.5 mb-4">
                 <img
                   className="w-[172px] h-[55px]"
                   src="/images/logo.svg"
                   alt="Logo"
                 />
-              </div>
+              </Link>
               <p className="text-[#b7b7b7] text-lg mt-2 font-semibold leading-normal">
                 At <span className="font-bold">Reach</span> Agency, we build
                 genuine partnerships to drive lasting growth through innovative
@@ -22,59 +22,77 @@ const Footer = () => {
               </p>
             </div>
 
-            {/* navigations */}
-            <div>
-              <h3 className="text-xl font-bold mb-4">Links</h3>
-              <ul className="space-y-4">
-                <li>
-                  <Link
-                    href="/"
-                    className="text-[#b7b7b7] hover:text-white transition"
-                  >
-                    Home
-                  </Link>
-                </li>
+            <div className="flex w-full items-start justify-between md:justify-center md:gap-[100px]  ">
+              {/* navigations */}
+              <div>
+                <h3 className="text-xl font-bold mb-4">Links</h3>
+                <ul className="space-y-4">
+                  <li>
+                    <Link
+                      href="/"
+                      className="text-[#b7b7b7] hover:text-white transition"
+                    >
+                      Home
+                    </Link>
+                  </li>
 
-                <li>
-                  <Link
-                    href="/blogs"
-                    className="text-[#b7b7b7] hover:text-white transition"
-                  >
-                    Blogs
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/about"
-                    className="text-[#b7b7b7] hover:text-white transition"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="text-[#b7b7b7] hover:text-white transition"
-                  >
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
+                  <li>
+                    <Link
+                      href="/blogs"
+                      className="text-[#b7b7b7] hover:text-white transition"
+                    >
+                      Blogs
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/about"
+                      className="text-[#b7b7b7] hover:text-white transition"
+                    >
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/contact"
+                      className="text-[#b7b7b7] hover:text-white transition"
+                    >
+                      Contact
+                    </Link>
+                  </li>
+                </ul>
+              </div>
 
-            {/* support */}
-            <div>
-              <h3 className="text-xl font-bold mb-4">Support</h3>
-              <ul className="space-y-4">
-                <li>
-                  <Link
-                    href="/terms"
-                    className="text-[#b7b7b7] hover:text-white transition"
-                  >
-                    Terms
-                  </Link>
-                </li>
-              </ul>
+              {/* support */}
+              <div>
+                <h3 className="text-xl font-bold mb-4">Support</h3>
+                <ul className="space-y-4">
+                  <li>
+                    <Link
+                      href="/terms"
+                      className="text-[#b7b7b7] hover:text-white transition"
+                    >
+                      Terms
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/terms"
+                      className="text-[#b7b7b7] hover:text-white transition"
+                    >
+                      privacy policy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/jobs"
+                      className="text-[#b7b7b7] hover:text-white transition"
+                    >
+                      Join Us
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* subscripe */}
@@ -94,7 +112,7 @@ const Footer = () => {
               {/* social icons */}
               <div className="flex gap-4 mt-6">
                 <a
-                  href="https://www.facebook.com/profile.php?id=61571110720899"
+                  href="https://www.facebook.com/Reach.agency12/"
                   target="_blank"
                   className="bg-[#111111] w-[66px] h-[66px] flex items-center justify-center rounded-full border border-[#868686] p-4 hover:bg-[#444444] transition"
                 >
@@ -112,7 +130,7 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://www.instagram.com/minuttes90?igsh=bWg0MGluODk1MnNv"
+                  href="https://www.instagram.com/reach_agency.eg?fbclid=IwY2xjawIfP_5leHRuA2FlbQIxMAABHQGgNFCr2_zH0WQThH-2Am4f-_rEvcg4Xs6yoIvyi1aHuQoWq5SNj3JiMA_aem_QHBn8jT-MkKjwI6bCrxvxQ"
                   target="_blank"
                   className="bg-[#111111] w-[66px] h-[66px] flex items-center justify-center rounded-full border border-[#868686] p-4 hover:bg-[#444444] transition"
                 >
@@ -130,7 +148,7 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  href="mailto:info@Reach.com"
+                  href="mailto:reachagency@reachksa.com"
                   target="_blank"
                   className="bg-[#111111] w-[66px] h-[66px] flex items-center justify-center rounded-full border border-[#868686] p-4 hover:bg-[#444444] transition"
                 >
@@ -146,8 +164,8 @@ const Footer = () => {
                     />
                   </svg>
                 </a>
-                {/* <a
-                  href="https://wa.me/+4915252455276"
+                <a
+                  href="https://wa.me/+201551039398"
                   target="_blank"
                   className="bg-[#111111] w-[66px] h-[66px] flex items-center justify-center rounded-full border border-[#868686] p-4 hover:bg-[#444444] transition"
                 >
@@ -163,17 +181,13 @@ const Footer = () => {
                       fill="white"
                     />
                   </svg>
-                </a> */}
+                </a>
               </div>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-[#4a4a4c] flex flex-col sm:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-4 sm:mb-0">
-              Reach
-              <span className="w-5 h-5 rounded-full border border-[#d9d9d9] inline-flex items-center justify-center">
-                c
-              </span>
-              <span>2024</span>
+              Reach &copy; 2024
             </div>
             <div>Reach, All rights reserved</div>
           </div>

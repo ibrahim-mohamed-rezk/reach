@@ -43,6 +43,26 @@ export interface HomeData {
   featured_posts?: FeaturedPost[];
 }
 
+// job
+export interface Job {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  location: string;
+  type: string;
+  experience_level: string;
+  salary_min: string;
+  salary_max: string;
+  department: string;
+  is_active: boolean;
+  deadline: string;
+  positions_available: number;
+  required_skills: string[];
+  created_at: string;
+  updated_at: string;
+}
+
 // public pagination
 export interface Meta {
   current_page: number;
