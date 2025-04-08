@@ -8,11 +8,11 @@ const page = async ({
   params,
   searchParams,
 }: {
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
   searchParams: { page?: string };
 }) => {
   let loading = true;
-  const { locale } = await params;
+  const { locale } = params;
   const page = parseInt(searchParams?.page || "1");
 
   const getBlogs = async () => {
