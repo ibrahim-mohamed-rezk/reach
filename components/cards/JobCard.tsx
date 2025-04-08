@@ -144,13 +144,30 @@ const JobCard = ({ job }: { job: Job }) => {
                 />
               </svg>
               <div className="justify-start text-white/70 text-base md:text-lg lg:text-xl font-normal font-['DM_Sans'] leading-normal md:leading-loose">
-                {new Date(job.created_at).toLocaleString(undefined, {
-                  year: "numeric",
-                  month: "short",
-                  day: "numeric",
-                  hour: "2-digit",
-                  minute: "2-digit",
-                })}
+                {(() => {
+                  const createdDate = new Date(job.created_at);
+                  const now = new Date();
+                  const diffInMs = now.getTime() - createdDate.getTime();
+                  
+                  // Convert to appropriate time units
+                  const diffInSecs = Math.floor(diffInMs / 1000);
+                  const diffInMins = Math.floor(diffInSecs / 60);
+                  const diffInHours = Math.floor(diffInMins / 60);
+                  const diffInDays = Math.floor(diffInHours / 24);
+                  const diffInMonths = Math.floor(diffInDays / 30);
+                  
+                  if (diffInSecs < 60) {
+                    return `${diffInSecs} seconds ago`;
+                  } else if (diffInMins < 60) {
+                    return `${diffInMins} minutes ago`;
+                  } else if (diffInHours < 24) {
+                    return `${diffInHours} hours ago`;
+                  } else if (diffInDays < 30) {
+                    return `${diffInDays} days ago`;
+                  } else {
+                    return `${diffInMonths} months ago`;
+                  }
+                })()}
               </div>
             </div>
           </div>
