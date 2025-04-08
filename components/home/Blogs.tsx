@@ -1,7 +1,7 @@
 "use client";
 
 import { FeaturedPost } from "@/libs/helpers/types";
-import BlogCard from "@/components/cards/BlogCard";
+import BlogHomeCard from "../cards/BlogHomeCard";
 
 const Blogs = ({ blogs }: { blogs: FeaturedPost[] }) => {
   return (
@@ -16,7 +16,7 @@ const Blogs = ({ blogs }: { blogs: FeaturedPost[] }) => {
       </div>
       <div className="self-stretch grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-[clamp(8px,2.08333vw,40px)]">
         {blogs?.map((blog, index) => (
-          <BlogCard key={index} blog={blog} />
+          <BlogHomeCard key={index} blog={blog} />
         ))}
       </div>
     </div>

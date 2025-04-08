@@ -6,24 +6,23 @@ const BlogCard = ({ blog }: { blog: FeaturedPost }) => {
   const imageUrl = useImageUrl();
   return (
     <Link href={`/blogs/${blog?.slug}`}>
-      <div className="h-full flex flex-col bg-black rounded-[clamp(10px,1.04166665vw,20px)] shadow-[0px_0px_22.2px_0px_rgba(243,128,30,1.00)] overflow-hidden transition-transform hover:scale-[1.02]">
-        <div className="p-2 sm:p-6 flex flex-col gap-[clamp(14px,1.25vw,34px)]">
-          <img
-            className="w-full h-auto aspect-[1.7/1] rounded-[clamp(6px,0.625vw,20px)] object-cover"
-            src={imageUrl(blog?.featured_image)}
-            alt="Blog post thumbnail"
-          />
-          <div className="flex flex-col gap-[clamp(5px,0.41666667vw,20px)]">
-            <div className="text-[#ffffffb7] text-[clamp(7px,0.833334vw,100px)] font-normal font-['Inter']">
-              {blog?.published_at}
-            </div>
-            <h3 className="text-white text-[clamp(10px,1.04166665vw,100px)] font-bold font-['Plus_Jakarta_Sans']">
-              {blog?.title}
-            </h3>
-            <p className="text-[#d6d3d1] text-[clamp(8px,0.9375vw,100px)] font-normal font-['Inter']">
-              {blog?.short_description}
-            </p>
-          </div>
+      <div className="w-full h-auto relative rounded-xl gap-[clamp(10px,2.08333vw,40px)] flex flex-col">
+        <img
+          loading="lazy"
+          className="w-full h-auto aspect-[16/9] object-cover rounded-xl"
+          src={imageUrl(blog?.featured_image) || "https://placehold.co/759x427"}
+          alt={blog?.title || "Blog post thumbnail"}
+        />
+        <h2 className="text-stone-50 w-full line-clamp-2 text-[clamp(10px,2.5vw,48px)] font-medium font-['Inter'] leading-tight">
+          {blog?.title ||
+            "What Should You Be Charging For Your Freelance Work?"}
+        </h2>
+        <p className="text-neutral-400 w-full line-clamp-4 text-[clamp(7px,1.04166665vw,20px)] font-normal font-['Inter'] leading-relaxed">
+          {blog?.short_description ||
+            "Unfortunately, this is too complicated of a question to get a short answer to! There are so many freelance industries and the going rates are different for each..."}
+        </p>
+        <div className="w-full line-clamp-1 text-neutral-400 text-[clamp(5px,0.9375vw,18px)] font-normal font-['Inter'] leading-snug">
+          {"Reach Agency"}, {blog?.published_at}
         </div>
       </div>
     </Link>

@@ -23,7 +23,6 @@ export interface FeaturedProject {
   sort_order: number;
   created_at: string;
   updated_at: string;
-
 }
 
 // featured posts
@@ -42,4 +41,12 @@ export interface FeaturedPost {
 export interface HomeData {
   featured_projects?: FeaturedProject[];
   featured_posts?: FeaturedPost[];
+}
+
+// public pagination
+export interface Meta {
+  current_page: number;
+  last_page: number;
+  per_page: number;
+  total: number;
 }

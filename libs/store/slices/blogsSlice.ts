@@ -15,17 +15,7 @@ const initialState: BlogsState = {
   error: null,
 };
 
-export const fetchBlogs = createAsyncThunk(
-  "blogs/fetchBlogs",
-  async (_, { rejectWithValue }) => {
-    try {
-      const response = await getApi("/api/posts");
-      return response.data;
-    } catch (error) {
-      return rejectWithValue("Failed to fetch blogs");
-    }
-  }
-);
+
 
 export const fetchBlogBySlug = createAsyncThunk(
   "blogs/fetchBlogBySlug",
@@ -45,21 +35,6 @@ export const blogsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchBlogs.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(
-        fetchBlogs.fulfilled,
-        (state, action: PayloadAction<FeaturedPost[]>) => {
-          state.blogs = action.payload;
-          state.loading = false;
-        }
-      )
-      .addCase(fetchBlogs.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload as string;
-      })
       .addCase(fetchBlogBySlug.pending, (state) => {
         state.loading = true;
         state.error = null;
