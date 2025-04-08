@@ -4,7 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { getApi } from "@/libs/axios/backend";
 import { FeaturedPost, Meta } from "@/libs/helpers/types";
 
-const Blogs = async ({
+const page = async ({
   params,
   searchParams,
 }: {
@@ -102,4 +102,4 @@ const Blogs = async ({
   );
 };
 
-export default Blogs;
+export default page;
