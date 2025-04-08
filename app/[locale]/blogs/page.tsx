@@ -3,7 +3,6 @@ import Pagination from "@/components/pagination/Pagination";
 import { Link } from "@/i18n/navigation";
 import { getApi } from "@/libs/axios/backend";
 import { FeaturedPost, Meta } from "@/libs/helpers/types";
-import useImageUrl from "@/libs/hooks/useImageUrl";
 
 const Blogs = async ({
   params,
@@ -35,8 +34,6 @@ const Blogs = async ({
   };
 
   const { data, meta }: { data: FeaturedPost[]; meta: Meta } = await getBlogs();
-
-  const imageUrl = useImageUrl();
 
   console.log(locale, page);
   return loading ? (
@@ -82,8 +79,9 @@ const Blogs = async ({
               alt="blog"
               className="w-[clamp(100px,53.3854164vw,2000px)] h-auto aspect-[1025.06/553.80] rounded-xl"
               src={
-                imageUrl(data && data[0]?.featured_image) ||
-                "https://placehold.co/759x427"
+                `https://dashboard.reachksa.com${
+                  data && data[0]?.featured_image
+                }` || "https://placehold.co/759x427"
               }
             />
           </Link>
