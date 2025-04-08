@@ -10,18 +10,19 @@ const page = async ({
   searchParams,
 }: {
   params: Promise<{ locale: string }>;
-  searchParams: { page?: string };
+  searchParams: Promise<{ page?: string }>;
 }) => {
   let loading = true;
   const { locale } = await params;
-  const page = parseInt(searchParams?.page || "1");
+  const { page: pageParam } = await searchParams;
+  const pageNum = parseInt(pageParam || "1");
 
   const getJobs = async () => {
     try {
       const response = await getApi(
         "/api/jobs/active",
         {
-          page,
+          page: pageNum,
         },
         {
           "Accept-Language": locale,

@@ -4,24 +4,24 @@ import { Link } from "@/i18n/navigation";
 import { getApi } from "@/libs/axios/backend";
 import { FeaturedPost, Meta } from "@/libs/helpers/types";
 
-
-const Page = async ({
+const page = async ({
   params,
   searchParams,
 }: {
-  params: { locale: string };
-  searchParams?: { page?: string };
+  params: Promise<{ locale: string }>;
+  searchParams: Promise<{ page?: string }>;
 }) => {
-  const { locale } = params;
-  const page = parseInt(searchParams?.page || "1");
   let loading = true;
+  const { locale } = await params;
+  const { page: pageParam } = await searchParams;
+  const pageNum = parseInt(pageParam || "1");
 
   const getBlogs = async () => {
     try {
       const response = await getApi(
         "/api/posts",
         {
-          page,
+          page: pageNum,
         },
         {
           "Accept-Language": locale,
@@ -36,7 +36,7 @@ const Page = async ({
 
   const { data, meta }: { data: FeaturedPost[]; meta: Meta } = await getBlogs();
 
-  console.log(locale, page);
+  console.log(locale, pageNum);
   return loading ? (
     <div className="w-full flex items-center justify-center text-white">
       Loading...
@@ -58,20 +58,20 @@ const Page = async ({
 
       {/* first blog in first page */}
       <div className="w-full mt-[clamp(10px,4.5625vw,80px)] px-[5px] md:px-[clamp(0px,2.08333vw,40px)] pb-[clamp(50px,7.15625vw,150px)] mx-auto flex flex-col justify-start items-center gap-[clamp(40px,4.1666666vw,80px)]">
-        {meta?.current_page === 1 && (
+        {meta?.current_page === 1 && data && data.length > 0 && (
           <Link
-            href={`/blogs/${data && data[0]?.slug}`}
+            href={`/blogs/${data[0]?.slug}`}
             className="w-full px-[5px] md:px-[clamp(0px,7.2916667vw,140px)] flex items-start justify-center rounded-xl"
           >
             <div className="w-[clamp(80px,39.4791664vw,1800px)] h-auto aspect-[758.81/520.52] gap-[clamp(5px,1.19791667vw,40px)] p-[8px] md:p-[clamp(5px,2.86458vw,100px)] mt-[6%] z-10 relative -me-[10%] bg-white rounded-lg md:rounded-xl flex flex-col items-start justify-center">
               <div className="w-full justify-start text-neutral-950 text-[clamp(6px,3.125vw,90px)] font-semibold font-['Inter'] leading-[1.15]">
-                {data && data[0]?.title}
+                {data[0]?.title}
               </div>
               <div className="w-full justify-start line-clamp-4 text-neutral-700 text-[clamp(6px,1.04166665vw,30px)] font-normal font-['Inter'] leading-relaxed">
-                {data && data[0]?.short_description}
+                {data[0]?.short_description}
               </div>
               <div className="w-full md:mt-3 justify-start text-neutral-700 text-[clamp(4px,0.9375vw,24px)] font-normal font-['Inter'] leading-snug">
-                {"Reach Agency"}, {data && data[0]?.published_at}
+                {"Reach Agency"}, {data[0]?.published_at}
               </div>
             </div>
 
@@ -80,9 +80,8 @@ const Page = async ({
               alt="blog"
               className="w-[clamp(100px,53.3854164vw,2000px)] h-auto aspect-[1025.06/553.80] rounded-xl"
               src={
-                `https://dashboard.reachksa.com${
-                  data && data[0]?.featured_image
-                }` || "https://placehold.co/759x427"
+                `https://dashboard.reachksa.com${data[0]?.featured_image}` || 
+                "https://placehold.co/759x427"
               }
             />
           </Link>
@@ -103,4 +102,4 @@ const Page = async ({
   );
 };
 
-export default Page;
+export default page;
