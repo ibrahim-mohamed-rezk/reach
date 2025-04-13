@@ -10,10 +10,10 @@ const Header = () => {
 
   const navItems = [
     { label: "Home", href: "/" },
-    { label: "Services", href: "#services" },
+    { label: "Services", href: "/services" },
     { label: "Projects", href: "/projects" },
     { label: "Blogs", href: "/blogs" },
-    { label: "About", href: "#about" },
+    { label: "About", href: "/about" },
   ];
 
   return (
@@ -47,11 +47,14 @@ const Header = () => {
           </div>
 
           {/* contact us button */}
-          <button className="px-[30px] py-[16px] hover:scale-110 duration-300 bg-[#f3801e] rounded-[30px] justify-start items-start hidden lg:flex">
+          <Link
+            href={"/contact-us"}
+            className="px-[30px] py-[16px] hover:scale-110 duration-300 bg-[#f3801e] rounded-[30px] justify-start items-start hidden lg:flex"
+          >
             <span className="text-white text-lg font-semibold font-['Archivo']">
               Contact Us
             </span>
-          </button>
+          </Link>
 
           {/* mobile menu icon */}
           <div
@@ -111,11 +114,15 @@ const Header = () => {
               <div className="w-[90%] !mt-5 mx-auto border-b border-[#f3811e70]"></div>
 
               {/* mobile contact us button */}
-              <div className="px-[15px] py-[10px] mx-auto !mt-[30px] bg-[#f3801e] rounded-[15px] justify-start items-start flex">
+              <Link
+                href={"/contact-us"}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="px-[15px] py-[10px] mx-auto !mt-[30px] bg-[#f3801e] rounded-[15px] justify-start items-start flex"
+              >
                 <div className="text-white text-lg font-bold font-['Archivo']">
                   Contact Us
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
 

@@ -2,19 +2,22 @@ import { Link } from "@/i18n/navigation";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#000] mt-[-10px] py-8">
-      <div className="mx-[5px] md:mx-[100px]">
-        <div className="bg-[#000] text-white rounded-[15px] border border-[#39393B] p-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="mb-8 md:mb-0">
-              <Link href="/" className="flex items-center gap-2.5 mb-4">
+    <footer className="mt-[-10px] py-[clamp(10px,1.5625vw,100px)] z-20 relative">
+      <div className="mx-[clamp(5px,5.20834vw,500px)]">
+        <div className="text-white rounded-[15px] border border-[#39393B] p-[clamp(10px,1.5625vw,100px)]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[clamp(10px,1.5625vw,100px)]">
+            <div className="mb-[clamp(10px,1.5625vw,100px)] md:mb-0">
+              <Link
+                href="/"
+                className="flex items-center gap-2.5 mb-[clamp(8px,0.833334vw,100px)]"
+              >
                 <img
-                  className="w-[172px] h-[55px]"
+                  className="w-[clamp(100px,8.95834vw,500px)] h-[clamp(30px,2.86458vw,200px)]"
                   src="/images/logo.svg"
                   alt="Logo"
                 />
               </Link>
-              <p className="text-[#b7b7b7] text-lg mt-2 font-semibold leading-normal">
+              <p className="text-[#b7b7b7] text-[clamp(12px,0.9375vw,40px)] mt-[clamp(5px,0.41666667vw,20px)] font-semibold leading-normal">
                 At <span className="font-bold">Reach</span> Agency, we build
                 genuine partnerships to drive lasting growth through innovative
                 programming and marketing strategies, empowering businesses to
@@ -25,8 +28,10 @@ const Footer = () => {
             <div className="flex w-full items-start justify-between md:justify-center md:gap-[100px]  ">
               {/* navigations */}
               <div>
-                <h3 className="text-xl font-bold mb-4">Links</h3>
-                <ul className="space-y-4">
+                <h3 className="text-[clamp(12px,1.04166665vw,100px)] font-bold mb-[clamp(8px,0.833334vw,100px)]">
+                  Links
+                </h3>
+                <ul className="gap-[clamp(10px,1.5625vw,100px)] flex flex-col items-start justify-start text-[clamp(12px,1.04166665vw,100px)]">
                   <li>
                     <Link
                       href="/"
@@ -54,10 +59,10 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/contact"
+                      href="/contact-us"
                       className="text-[#b7b7b7] hover:text-white transition"
                     >
-                      Contact
+                      Contact Us
                     </Link>
                   </li>
                 </ul>
@@ -65,8 +70,10 @@ const Footer = () => {
 
               {/* support */}
               <div>
-                <h3 className="text-xl font-bold mb-4">Support</h3>
-                <ul className="space-y-4">
+                <h3 className="text-[clamp(12px,1.04166665vw,100px)] font-bold mb-[clamp(8px,0.833334vw,100px)]">
+                  Support
+                </h3>
+                <ul className="gap-[clamp(10px,1.5625vw,100px)] flex flex-col items-start justify-start text-[clamp(12px,1.04166665vw,100px)]">
                   <li>
                     <Link
                       href="/terms"
@@ -97,28 +104,29 @@ const Footer = () => {
 
             {/* subscripe */}
             <div>
-              <h3 className="text-xl font-bold mb-4">Get Updates</h3>
-              <div className="bg-[#111111] rounded-[10px] border border-[#868686] p-2 flex flex-row items-center gap-2">
+              <h3 className="text-[clamp(12px,1.04166665vw,100px)] font-bold mb-[clamp(8px,0.833334vw,100px)]">
+                Get Updates
+              </h3>
+              <div className="bg-[#111111] rounded-[10px] border border-[#868686] p-[clamp(4px,0.41666667vw,50px)] flex flex-row items-center gap-[clamp(4px,0.41666667vw,50px)]">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="bg-transparent w-full text-[#878787] p-2 flex-grow"
+                  className="bg-transparent w-full text-[#878787] p-[clamp(4px,0.41666667vw,50px)] flex-grow"
                 />
-                <button className="bg-white text-[#4E4F5D] font-bold py-2 px-4 rounded-[10px]">
+                <button className="bg-white text-[#4E4F5D] font-bold py-[clamp(4px,0.41666667vw,50px)] px-[clamp(8px,0.833334vw,100px)] rounded-[10px]">
                   Subscribe
                 </button>
               </div>
 
               {/* social icons */}
-              <div className="flex gap-4 mt-6">
+              <div className="flex gap-[clamp(8px,0.833334vw,100px)] mt-[clamp(10px,1.25vw,100px)]">
                 <a
                   href="https://www.facebook.com/Reach.agency12/"
                   target="_blank"
-                  className="bg-[#111111] w-[66px] h-[66px] flex items-center justify-center rounded-full border border-[#868686] p-4 hover:bg-[#444444] transition"
+                  className="bg-[#111111] w-[clamp(50px,3.437504vw,200px)] h-[clamp(50px,3.437504vw,200px)] flex items-center justify-center rounded-full border border-[#868686] p-[clamp(8px,0.833334vw,100px)] hover:bg-[#444444] transition"
                 >
                   <svg
-                    width="13"
-                    height="26"
+                    className="w-[clamp(15px,1.35416667vw,100px)] h-[clamp(15px,1.35416667vw,100px)]"
                     viewBox="0 0 13 26"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -132,11 +140,10 @@ const Footer = () => {
                 <a
                   href="https://www.instagram.com/reach_agency.eg?fbclid=IwY2xjawIfP_5leHRuA2FlbQIxMAABHQGgNFCr2_zH0WQThH-2Am4f-_rEvcg4Xs6yoIvyi1aHuQoWq5SNj3JiMA_aem_QHBn8jT-MkKjwI6bCrxvxQ"
                   target="_blank"
-                  className="bg-[#111111] w-[66px] h-[66px] flex items-center justify-center rounded-full border border-[#868686] p-4 hover:bg-[#444444] transition"
+                  className="bg-[#111111] w-[clamp(50px,3.437504vw,200px)] h-[clamp(50px,3.437504vw,200px)] flex items-center justify-center rounded-full border border-[#868686] p-[clamp(8px,0.833334vw,100px)] hover:bg-[#444444] transition"
                 >
                   <svg
-                    width="25"
-                    height="26"
+                    className="w-[clamp(15px,1.35416667vw,100px)] h-[clamp(15px,1.35416667vw,100px)]"
                     viewBox="0 0 25 26"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -150,12 +157,11 @@ const Footer = () => {
                 <a
                   href="mailto:reachagency@reachksa.com"
                   target="_blank"
-                  className="bg-[#111111] w-[66px] h-[66px] flex items-center justify-center rounded-full border border-[#868686] p-4 hover:bg-[#444444] transition"
+                  className="bg-[#111111] w-[clamp(50px,3.437504vw,200px)] h-[clamp(50px,3.437504vw,200px)] flex items-center justify-center rounded-full border border-[#868686] p[clamp(8px,0.833334vw,100px)] hover:bg-[#444444] transition"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width={"26"}
-                    height={"26"}
+                    className="w-[clamp(15px,1.35416667vw,100px)] h-[clamp(15px,1.35416667vw,100px)]"
                     viewBox="0 0 512 512"
                   >
                     <path
@@ -167,11 +173,10 @@ const Footer = () => {
                 <a
                   href="https://wa.me/+201551039398"
                   target="_blank"
-                  className="bg-[#111111] w-[66px] h-[66px] flex items-center justify-center rounded-full border border-[#868686] p-4 hover:bg-[#444444] transition"
+                  className="bg-[#111111] w-[clamp(50px,3.437504vw,200px)] h-[clamp(50px,3.437504vw,200px)] flex items-center justify-center rounded-full border border-[#868686] p-[clamp(8px,0.833334vw,100px)] hover:bg-[#444444] transition"
                 >
                   <svg
-                    width="26"
-                    height="26"
+                    className="w-[clamp(15px,1.35416667vw,100px)] h-[clamp(15px,1.35416667vw,100px)]"
                     viewBox="0 0 26 26"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -185,11 +190,13 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-[#4a4a4c] flex flex-col sm:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-4 sm:mb-0">
+          <div className="mt-[clamp(10px,1.5625vw,100px)] pt-[clamp(10px,1.5625vw,100px)] border-t border-[#4a4a4c] text-[clamp(12px,1.04166665vw,100px)] flex flex-col sm:flex-row justify-between items-center">
+            <div className="flex text-[clamp(12px,1.04166665vw,100px)] items-center gap-[clamp(4px,0.41666667vw,50px)] mb-[clamp(8px,0.833334vw,100px)] sm:mb-0">
               Reach &copy; 2024
             </div>
-            <div>Reach, All rights reserved</div>
+            <div className=" text-[clamp(12px,1.04166665vw,100px)]">
+              Reach, All rights reserved
+            </div>
           </div>
         </div>
       </div>

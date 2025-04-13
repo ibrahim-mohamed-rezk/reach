@@ -63,6 +63,19 @@ export interface Job {
   updated_at: string;
 }
 
+// Service
+export interface FeaturedService {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  icon: string | null;
+  is_active: boolean;
+  created_at: string;
+  updated_at: string;
+  image: string;
+}
+
 // public pagination
 export interface Meta {
   current_page: number;
