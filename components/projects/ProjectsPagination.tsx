@@ -11,7 +11,7 @@ const ProjectsPagination = () => {
 
   useEffect(() => {
     dispatch(fetchProjects());
-  }, []);
+  }, [dispatch]);
 
   const { projects, loading, error } = useAppSelector(
     (state: RootState) => state.projects

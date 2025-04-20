@@ -33,7 +33,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <div
                   key={item.label}
-                  className={`text-white flex items-center rounded-[5px] justify-center  m-0 text-base font-normal font-['Archivo'] hover:scale-110 duration-300 hover:bg-[#ff9437] px-[15px] py-[3px]  ${
+                  className={`text-white z-50 relative flex items-center rounded-[5px] justify-center  m-0 text-base font-normal font-['Archivo'] hover:scale-110 duration-300 hover:bg-[#ff9437] px-[15px] py-[3px]  ${
                     pathname === item.href
                       ? " text-white  bg-[#f3801e]"
                       : "text-white"
@@ -59,7 +59,7 @@ const Header = () => {
           {/* mobile menu icon */}
           <div
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-            className="lg:hidden flex items-center justify-center"
+            className="lg:hidden relative z-50 flex items-center justify-center"
           >
             <svg
               fill="#f3801e"

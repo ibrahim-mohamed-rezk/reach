@@ -1,4 +1,6 @@
+import ServicesCard from "@/components/cards/ServicesCard";
 import { getApi } from "@/libs/axios/backend";
+import { FeaturedService } from "@/libs/helpers/types";
 
 const page = async () => {
   const feachData = async () => {
@@ -45,51 +47,8 @@ const page = async () => {
 
       {/* Services Sections */}
       <div className="w-full py-8 md:py-16 px-[5px] lg:px-[clamp(0px,6.25vw,120px)] overflow-hidden">
-        {[1, 2, 3, 4].map((index) => (
-          <div key={index} className="relative mb-16 md:mb-24">
-            <div className="hidden md:block opacity-20 text-white/10 text-5xl md:text-[250px] lg:text-[450.39px] font-semibold font-['Inter'] absolute bottom-0 left-0 z-0">
-              Branding & Design
-            </div>
-            <div className="flex flex-col lg:flex-row items-start justify-between relative z-10">
-              <div className="w-full lg:w-1/2 mb-8 lg:mb-0 pr-0 lg:pr-8">
-                <h2 className="text-3xl md:text-5xl lg:text-6xl text-white font-semibold font-['Inter'] mb-6">
-                  Branding & Design
-                </h2>
-                <p className="text-white text-base font-semibold font-['Inter'] mb-8">
-                  We help businesses build a strong and memorable brand identity
-                  through creative and high-quality designs. From crafting
-                  unique logos and visual elements to designing social media
-                  content and professional motion graphics videos, we ensure
-                  your brand stands out and leaves a lasting impression.
-                </p>
-                <div className="mb-8">
-                  <p className="text-white text-base font-semibold font-['Inter'] mb-4">
-                    Brand identity design that reflects your business vision.
-                  </p>
-                  <p className="text-white text-base font-semibold font-['Inter'] mb-4">
-                    Social media designs for consistent branding.
-                  </p>
-                  <p className="text-white text-base font-semibold font-['Inter'] mb-4">
-                    Professional motion graphics videos to enhance your
-                    advertising message.
-                  </p>
-                </div>
-                <div className="inline-flex bg-black rounded-[35px] shadow-[0px_0px_14.399999618530273px_0px_rgba(243,128,30,1.00)] pl-[5px] pr-3.5 py-[5px] items-center gap-5">
-                  <div className="w-16 h-11 px-5 py-2.5 bg-white rounded-[34px] flex justify-center items-center gap-2.5">
-                    <div className="w-8 h-4 relative origin-top-left rotate-45 overflow-hidden">
-                      <div className="w-5 h-5 left-[7.42px] top-[7.42px] absolute bg-orange-500" />
-                    </div>
-                  </div>
-                  <div className="text-white text-base font-semibold font-['Inter']">
-                    Need This Service?
-                  </div>
-                </div>
-              </div>
-              <div className="w-full lg:w-1/2">
-                <div className="w-full h-[250px] md:h-[350px] lg:h-[465px] bg-zinc-300 rounded-[44.75px]"></div>
-              </div>
-            </div>
-          </div>
+        {services.map((sercive: FeaturedService, index: number) => (
+          <ServicesCard key={index} service={sercive} />
         ))}
       </div>
 

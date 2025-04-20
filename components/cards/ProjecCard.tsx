@@ -59,7 +59,7 @@ const ProjecCard = ({ project }: { project: FeaturedProject }) => {
           <div className="absolute top-0 left-[clamp(7px,2.6041667vw,50px)] flex space-x-4">
             <div className="relative">
               <svg
-                className="w-[clamp(50px,5.15625vw,200px)] h-[clamp(40px,8.02084vw,300px)]"
+                className="w-[clamp(50px,5.15625vw,250px)] h-[clamp(40px,8.02084vw,300px)]"
                 viewBox="0 0 99 154"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ const ProjecCard = ({ project }: { project: FeaturedProject }) => {
                   fill="black"
                 />
               </svg>
-              <div className="absolute text-[clamp(5px,0.9975vw,20px)] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center font-bold w-full">
+              <div className="absolute text-[clamp(5px,0.6975vw,20px)] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center font-bold w-full">
                 {project?.service?.title}
               </div>
             </div>

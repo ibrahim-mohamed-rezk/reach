@@ -26,7 +26,7 @@ export default async function LocaleLayout({
       <body className="w-full bg-black">
         <ReduxProvider>
           <NextIntlClientProvider>
-            <div className="w-full bg-black overflow-hidden relative">
+            <body className="w-full bg-black overflow-hidden relative">
               <Header />
               <main>{children}</main>
               <Footer />
@@ -40,7 +40,7 @@ export default async function LocaleLayout({
                 pauseOnHover
                 theme="dark"
               />
-            </div>
+            </body>
           </NextIntlClientProvider>
         </ReduxProvider>
       </body>

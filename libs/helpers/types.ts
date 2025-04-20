@@ -74,6 +74,7 @@ export interface FeaturedService {
   created_at: string;
   updated_at: string;
   image: string;
+  short_description: string;
 }
 
 // public pagination
