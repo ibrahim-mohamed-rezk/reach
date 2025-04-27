@@ -29,7 +29,7 @@ export default async function Home() {
         <MoveFast />
       </div>
       <div className="z-[2] sticky top-0 max-h-screen hide-scrollbar">
-        <About />
+        <About bg={true} shpes={true} />
       </div>
       <div className="z-[3] relative bg-black">
         <Services />

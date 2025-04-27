@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-const About = () => {
+const About = ({ bg, shpes }: { bg: boolean, shpes: boolean }) => {
   const shadowRef = useRef<HTMLDivElement | null>(null);
 
   const handleMouseMove = (event: MouseEvent) => {
@@ -48,9 +48,15 @@ const About = () => {
   }, []);
 
   return (
-    <div id="about" className=" w-full relative bg-[#F3801E]">
+    <div
+      id="about"
+      className={` w-full relative `}
+      style={{
+        background: bg ? "#F3801E" : "",
+      }}
+    >
       <div className="w-full mx-auto">
-        <div className="w-full relative bg-[#F3801E] py-[clamp(20px,2.08333vw,40px)] px-[clamp(15px,1.5625vw,30px)]">
+        <div className="w-full relative  py-[clamp(20px,2.08333vw,40px)] px-[clamp(15px,1.5625vw,30px)]">
           <div className="w-full bg-black px-[clamp(10px,5.20834vw,100px)] rounded-[clamp(17px,1.875vw,36px)] flex flex-col md:flex-row justify-start items-center gap-[26.67px] pt-[clamp(50px,7.42188vw,150px)] pb-[clamp(50px,4.5052083vw,91.5px)]">
             <div className="w-full md:w-1/2 flex-col justify-start items-start gap-[33.33px] inline-flex">
               <div className="text-[clamp(20px,3.33333vw,64px)] font-['Inter'] leading-tight">
@@ -211,7 +217,7 @@ const About = () => {
 
           {/* absolute elements */}
           {/* right icon */}
-          <div className="absolute bottom-0 right-0  ">
+         {shpes && <div className="absolute bottom-0 right-0  ">
             <svg
               className="w-[clamp(150px,15.625vw,300px)] h-[clamp(70px,6.77083vw,130px)]"
               viewBox="0 0 428 168"
@@ -225,9 +231,9 @@ const About = () => {
                 stroke-width="5.33333"
               />
             </svg>
-          </div>
+          </div>}
           {/* left icon */}
-          <div className="absolute bottom-0 left-0 opacity-35 ">
+         {shpes && <div className="absolute bottom-0 left-0 opacity-35 ">
             <svg
               className="w-[clamp(100px,10.4166668vw,200px)px] h-[clamp(140px,11.927084vw,229px)]"
               viewBox="0 0 301 329"
@@ -241,10 +247,10 @@ const About = () => {
                 stroke-width="5.33333"
               />
             </svg>
-          </div>
+          </div>}
 
           {/* Mouse Shadow */}
-          <div
+         {shpes && <div
             ref={shadowRef}
             className="hidden duration-[50ms] sm:flex absolute translate-x-[-50%] translate-y-[-50%] z-0 w-[170px] h-[170px] rounded-full pointer-events-none"
             style={{
@@ -252,7 +258,7 @@ const About = () => {
               filter: "blur(80px)",
               mixBlendMode: "screen",
             }}
-          />
+          />}
         </div>
       </div>
     </div>

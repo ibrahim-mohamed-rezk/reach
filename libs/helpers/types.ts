@@ -84,3 +84,15 @@ export interface Meta {
   per_page: number;
   total: number;
 }
+
+// team members
+export interface TeamMember {
+  id: number;
+  name: string;
+  position: string;
+  bio: string;
+  image: string;
+  email: string;
+  linkedin_url: string;
+  github_url: string;
+}
