@@ -11,7 +11,7 @@ const ProjecCard = ({ project }: { project: FeaturedProject }) => {
           <div className="flex items-center gap-[clamp(8px,0.833334vw,30px)] mb-[clamp(8px,1.25vw,50px)]">
             <img
               className="w-[clamp(25px,3.333335vw,200px)] h-[clamp(25px,3.333335vw,200px)] rounded-md"
-              src={imageUrl(project?.image || "")}
+              src={imageUrl(project?.logo || "")}
               alt="Project logo"
             />
 
@@ -31,7 +31,7 @@ const ProjecCard = ({ project }: { project: FeaturedProject }) => {
         <div className="overflow-hidden w-[57%] rounded-[clamp(6px,0.625vw,20px)] p-[clamp(4px,1.25vw,60px)] relative">
           <img
             className="w-full h-auto aspect-[16/9] rounded-[clamp(6px,0.625vw,20px)] object-cover"
-            src={imageUrl(project?.gallery[0] || "")}
+            src={imageUrl(project?.cover || "")}
             alt="Project thumbnail"
           />
           <div className="absolute top-0 left-[clamp(7px,2.6041667vw,50px)] flex space-x-4">

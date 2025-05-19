@@ -16,13 +16,14 @@ export interface FeaturedProject {
   completion_date: string;
   technologies: string;
   website_url: string;
-  image: string;
+  logo: string;
   gallery: string[];
   is_featured: boolean;
   is_active: boolean;
   sort_order: number;
   created_at: string;
   updated_at: string;
+  cover: string;
 }
 
 // featured posts
