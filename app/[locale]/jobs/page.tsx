@@ -21,12 +21,12 @@ const page = async ({
   const getJobs = async () => {
     try {
       const response = await getApi(
-        "/api/jobs/active",
+        "api/jobs/active",
         {
           page: pageNum,
         },
         {
-          "Accept-Language": locale,
+          lang: locale,
         }
       );
       loading = false;
