@@ -1,6 +1,45 @@
+"use client";
 import { Link } from "@/i18n/navigation";
+import { postApi } from "@/libs/axios/backend";
+import axios from "axios";
+import { useLocale } from "next-intl";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import { useTranslations } from "use-intl";
 
 const Footer = () => {
+  const [data, setData] = useState<{ email: string } | null>({
+    email: "",
+  });
+  const locale = useLocale();
+  const t = useTranslations("Footer");
+  const e = useTranslations("Errors");
+  const handleSubscribe = async () => {
+    if (
+      !data?.email?.trim() ||
+      !data.email.includes("@") ||
+      !data.email.includes(".")
+    ) {
+      toast.error(t("Please enter a valid email address"));
+      return;
+    }
+    try {
+      const res = await postApi("api/subscribe", data, {
+        "Content-Type": "multipart/form-data",
+        lang: locale,
+      });
+      setData({ email: "" });
+      toast.success(res.message);
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        toast.error(error.response?.data?.msg || e("Something went wrong"));
+      } else {
+        toast.error(e("Something went wrong"));
+      }
+      throw error;
+    }
+  };
+
   return (
     <footer className="mt-[-10px] py-[clamp(10px,1.5625vw,100px)] z-20 relative">
       <div className="mx-[clamp(5px,5.20834vw,500px)]">
@@ -110,10 +149,15 @@ const Footer = () => {
               <div className="bg-[#111111] rounded-[10px] border border-[#868686] p-[clamp(4px,0.41666667vw,50px)] flex flex-row items-center gap-[clamp(4px,0.41666667vw,50px)]">
                 <input
                   type="email"
+                  value={data?.email}
+                  onChange={(e) => setData({ ...data, email: e.target.value })}
                   placeholder="Enter your email"
                   className="bg-transparent w-full text-[#878787] p-[clamp(4px,0.41666667vw,50px)] flex-grow"
                 />
-                <button className="bg-white text-[#4E4F5D] font-bold py-[clamp(4px,0.41666667vw,50px)] px-[clamp(8px,0.833334vw,100px)] rounded-[10px]">
+                <button
+                  onClick={handleSubscribe}
+                  className="bg-white text-[#4E4F5D] font-bold py-[clamp(4px,0.41666667vw,50px)] px-[clamp(8px,0.833334vw,100px)] rounded-[10px]"
+                >
                   Subscribe
                 </button>
               </div>
