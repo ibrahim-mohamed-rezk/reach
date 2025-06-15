@@ -1,8 +1,9 @@
-import React from "react";
 import { getApi } from "@/libs/axios/backend";
 import EmailForJobs from "@/components/jobs/EmailForJobs";
 import GetNoticedFaster from "@/components/jobs/GetNoticedFaster";
 import { Link } from "@/i18n/navigation";
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
+import JobForm from "./components/JobForm";
 
 const page = async ({
   params,
@@ -32,10 +33,10 @@ const page = async ({
 
   return loading ? (
     <div className="w-full flex items-center justify-center text-white p-8">
-      Loading...
+      <LoadingSpinner />
     </div>
   ) : (
-    <div className="w-full min-h-screen bg-black text-white">
+    <div className="w-full min-h-screen relative bg-black text-white">
       {/* Header section */}
       <div className="w-full relative bg-gradient-to-b from-black/0 to-orange-500/20 py-12">
         <div className="container mx-auto px-4 md:px-8">
@@ -64,7 +65,7 @@ const page = async ({
                   <span>Apply Now</span>
                 </a>
                 <button className="w-full border-2 border-orange-500 text-orange-500 font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-2">
-                  <span>Share now</span>
+                  <span>Share job</span>
                 </button>
               </div>
             </div>
@@ -77,9 +78,10 @@ const page = async ({
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="w-full lg:w-2/3">
             <div className="mb-12">
-              <div className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-8">
-                {job.description}
-              </div>
+              <p
+                className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-8"
+                dangerouslySetInnerHTML={{ __html: job.description }}
+              />
             </div>
           </div>
 
@@ -129,99 +131,68 @@ const page = async ({
       </div>
 
       {/* Application form */}
-      <div
-        id="applicationForm"
-        className="w-full bg-gradient-to-b from-black to-slate-50 py-12"
-      >
+      <div id="applicationForm" className="w-full bg-gradient-to-b py-12">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="bg-white rounded-lg shadow-lg p-6 md:p-12">
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="block text-slate-500 font-semibold">
-                  Full name *
-                </label>
-                <input
-                  type="text"
-                  className="w-full h-14 bg-white rounded-lg border border-slate-300 px-5"
-                  placeholder="Your name"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label className="block text-slate-500 font-semibold">
-                  Contact email *
-                </label>
-                <input
-                  type="email"
-                  className="w-full h-14 bg-white rounded-lg border border-slate-300 px-5"
-                  placeholder="you@example.com"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label className="block text-slate-500 font-semibold">
-                  Subject *
-                </label>
-                <input
-                  type="text"
-                  className="w-full h-14 bg-white rounded-lg border border-slate-300 px-5"
-                  placeholder="UI Designer"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label className="block text-slate-500 font-semibold">
-                  Resume *
-                </label>
-                <div className="flex">
-                  <input
-                    type="text"
-                    className="w-full h-14 bg-white rounded-l-lg border border-slate-300 px-5"
-                    placeholder="Choose file"
-                    readOnly
-                  />
-                  <button className="w-36 h-14 bg-slate-200 rounded-r-lg text-slate-500 font-bold">
-                    Choose
-                  </button>
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="block text-slate-500 font-semibold">
-                  Phone number
-                </label>
-                <input
-                  type="tel"
-                  className="w-full h-14 bg-white rounded-lg border border-slate-300 px-5"
-                  placeholder="+20 01018260856"
-                />
-              </div>
-
-              <div className="md:col-span-2 space-y-2">
-                <label className="block text-slate-500 font-semibold">
-                  Tell us a bit about you *
-                </label>
-                <textarea
-                  className="w-full h-36 bg-white rounded-lg border border-slate-300 p-5"
-                  placeholder="Let us know"
-                ></textarea>
-              </div>
-
-              <div className="md:col-span-2 text-slate-500 text-sm">
-                By submitting this form you agree to our terms and conditions
-                and our Privacy Policy which explains how we may collect, use
-                and disclose your personal information including to third
-                parties.
-              </div>
-
-              <div>
-                <button className="bg-orange-500 text-white font-bold py-3 px-8 rounded-lg">
-                  Apply Now
-                </button>
-              </div>
-            </form>
+          <div className="bg-white z-10 relative rounded-lg shadow-lg p-6 md:p-12">
+            <JobForm job_id={job.id} />
           </div>
         </div>
+      </div>
+      {/* wave shape in the background */}
+      <div className="absolute bottom-0 left-0 w-full">
+        <svg
+          width="100%"
+          viewBox="0 0 1917 705"
+          fill="black"
+            xmlns="http://www.w3.org/2000/svg"
+            className="pt-1"
+        >
+          <rect
+            width="1917"
+            height="828.037"
+            transform="matrix(1 0 0 -1 0 828.038)"
+            fill="url(#paint0_linear_778_2247)"
+            fill-opacity="0.2"
+          />
+          <mask
+            id="mask0_778_2247"
+            style={{ maskType: "luminance" }}
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="1917"
+            height="829"
+          >
+            <rect
+              width="1917"
+              height="828.037"
+              transform="matrix(1 0 0 -1 0 828.038)"
+              fill="white"
+            />
+          </mask>
+          <g mask="url(#mask0_778_2247)">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M1917 -23.9624H0V169.069C319.5 98.0689 639 62.5688 958.5 62.5688C1278 62.5688 1597.5 98.0689 1917 169.069V-23.9624Z"
+              fill="black"
+              
+            />
+          </g>
+          <defs>
+            <linearGradient
+              id="paint0_linear_778_2247"
+              x1="0"
+              y1="0"
+              x2="0"
+              y2="828.037"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-opacity="0.01" />
+              <stop offset="1" stop-color="#F3801E" />
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
     </div>
   );

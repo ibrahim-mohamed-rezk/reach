@@ -2,6 +2,7 @@ import JobCard from "@/components/cards/JobCard";
 import EmailForJobs from "@/components/jobs/EmailForJobs";
 import GetNoticedFaster from "@/components/jobs/GetNoticedFaster";
 import Pagination from "@/components/pagination/Pagination";
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import { getApi } from "@/libs/axios/backend";
 import { Job, Meta } from "@/libs/helpers/types";
 
@@ -39,8 +40,8 @@ const page = async ({
 
   console.log(locale, page);
   return loading ? (
-    <div className="w-full flex items-center justify-center text-white">
-      Loading...
+    <div className="w-full min-h-screen flex items-center justify-center">
+      <LoadingSpinner />
     </div>
   ) : (
     <div className="w-full min-h-screen flex flex-col justify-start items-center">
@@ -61,9 +62,15 @@ const page = async ({
         <div className="w-full mx-auto flex flex-col justify-start items-center gap-[clamp(40px,4.1666666vw,80px)]">
           {/* Jobs cards */}
           <div className="self-stretch grid grid-cols-1 gap-[clamp(8px,2.08333vw,60px)]">
-            {data?.map((job: Job, index) => {
-              return <JobCard job={job} key={index} />;
-            })}
+            {data?.length === 0 ? (
+              <div className="text-center text-neutral-700 text-[clamp(16px,1.25vw,24px)] font-normal font-['Inter']">
+                No jobs available at the moment. Please check back later.
+              </div>
+            ) : (
+              data?.map((job: Job, index) => {
+                return <JobCard job={job} key={index} />;
+              })
+            )}
           </div>
         </div>
         <div className="lg:flex flex-col justify-start items-center hidden gap-[clamp(10px,1.04166665vw,20px)] ">

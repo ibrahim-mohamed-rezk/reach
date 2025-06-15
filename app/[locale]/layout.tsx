@@ -23,24 +23,22 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-      <body className="w-full bg-black">
+      <body className="w-full bg-black relative">
         <ReduxProvider>
           <NextIntlClientProvider>
-            <body className="w-full bg-black overflow-hidden relative">
-              <Header />
-              <main>{children}</main>
-              <Footer />
-              <ScrollToTop />
-              <ToastContainer
-                position="top-center"
-                autoClose={3000}
-                hideProgressBar
-                closeOnClick
-                closeButton={false}
-                pauseOnHover
-                theme="dark"
-              />
-            </body>
+            <Header />
+            <main className="w-full overflow-hidden">{children}</main>
+            <Footer />
+            <ScrollToTop />
+            <ToastContainer
+              position="top-center"
+              autoClose={3000}
+              hideProgressBar
+              closeOnClick
+              closeButton={false}
+              pauseOnHover
+              theme="dark"
+            />
           </NextIntlClientProvider>
         </ReduxProvider>
       </body>

@@ -12,7 +12,7 @@ const Footer = () => {
     email: "",
   });
   const locale = useLocale();
-  const t = useTranslations("Footer");
+  // const t = useTranslations("Footer");
   const e = useTranslations("Errors");
   const handleSubscribe = async () => {
     if (
@@ -20,7 +20,7 @@ const Footer = () => {
       !data.email.includes("@") ||
       !data.email.includes(".")
     ) {
-      toast.error(t("Please enter a valid email address"));
+      toast.error(e("Please enter a valid email address"));
       return;
     }
     try {

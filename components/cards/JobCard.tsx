@@ -148,14 +148,14 @@ const JobCard = ({ job }: { job: Job }) => {
                   const createdDate = new Date(job.created_at);
                   const now = new Date();
                   const diffInMs = now.getTime() - createdDate.getTime();
-                  
+
                   // Convert to appropriate time units
                   const diffInSecs = Math.floor(diffInMs / 1000);
                   const diffInMins = Math.floor(diffInSecs / 60);
                   const diffInHours = Math.floor(diffInMins / 60);
                   const diffInDays = Math.floor(diffInHours / 24);
                   const diffInMonths = Math.floor(diffInDays / 30);
-                  
+
                   if (diffInSecs < 60) {
                     return `${diffInSecs} seconds ago`;
                   } else if (diffInMins < 60) {
@@ -172,9 +172,10 @@ const JobCard = ({ job }: { job: Job }) => {
             </div>
           </div>
         </div>
-        <div className="self-stretch line-clamp-2 justify-start text-white/70 text-base md:text-lg lg:text-xl font-normal font-['DM_Sans'] leading-normal md:leading-loose">
-          {job.description}
-        </div>
+        <div
+          className="self-stretch line-clamp-2 justify-start text-white/70 text-base md:text-lg lg:text-xl font-normal font-['DM_Sans'] leading-normal md:leading-loose"
+          dangerouslySetInnerHTML={{ __html: job.description }}
+        />
       </div>
     </Link>
   );
