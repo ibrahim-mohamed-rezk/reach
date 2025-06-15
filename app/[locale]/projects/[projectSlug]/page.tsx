@@ -1,5 +1,4 @@
 import { getApi } from "@/libs/axios/backend";
-import useImageUrl from "@/libs/hooks/useImageUrl";
 
 const page = async ({
   params,
@@ -7,7 +6,6 @@ const page = async ({
   params: Promise<{ locale: string; projectSlug: string }>;
 }) => {
   const paramsData = await params;
-  const imageUrl = useImageUrl();
 
   const getproject = async () => {
     try {
@@ -34,7 +32,7 @@ const page = async ({
             key={image}
             alt="project image"
             loading="lazy"
-            src={imageUrl(image || "")}
+            src={`https://dashboard.reachksa.com/${image}`}
           />
         );
       })}
