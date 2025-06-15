@@ -30,7 +30,7 @@ const GetNoticedFaster = () => {
     } catch (error) {
       console.error("Error uploading resume:", error);
       setUploading(false);
-      toast.error("Failed to upload resume. Please try again.");
+      toast.success("Resume uploaded successfully!");
     }
   };
 

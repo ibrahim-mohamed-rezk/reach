@@ -20,7 +20,7 @@ const ServicesCard = ({ service }: { service: FeaturedService }) => {
           />
 
           <Link
-            href={`services/${service?.slug}`}
+            href={`contact-us`}
             className="flex w-fit items-center gap-[clamp(8px,0.41666667vw,80px)] bg-orange-500 text-white rounded-full px-[clamp(4px,0.833334vw,100px)] py-[clamp(2px,0.41666667vw,80px)] shadow-lg shadow-orange-500/50"
           >
             <span className=" text-[clamp(8px,1.25vw,100px)] font-semibold">

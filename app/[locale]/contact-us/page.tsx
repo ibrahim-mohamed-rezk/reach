@@ -1,4 +1,4 @@
-import React from "react";
+import ContactForm from "./components/ContactForm";
 
 const page = () => {
   return (
@@ -114,67 +114,18 @@ const page = () => {
           </div>
 
           {/* contact Form */}
-          <div className="w-full lg:w-1/2 max-w-[580px] mx-auto lg:mx-0 bg-white rounded-3xl shadow-md outline outline-[0.82px] outline-offset-[-0.82px] outline-zinc-100 p-6 md:p-8">
-            <div className="mb-8">
-              <h2 className="text-black text-2xl md:text-4xl font-bold font-['Satoshi_Variable']">
-                Get in Touch
-              </h2>
-              <p className="text-black text-sm md:text-base font-normal font-['Satoshi_Variable']">
-                You can reach us anytime
-              </p>
-            </div>
-            <form className="space-y-6">
-              <div className="flex flex-col md:flex-row gap-4 md:gap-6">
-                <input
-                  type="text"
-                  placeholder="First name"
-                  className="w-full h-16 md:h-20 px-4 md:px-5 py-4 md:py-6 bg-white rounded-3xl shadow-sm outline outline-[0.82px] outline-offset-[-0.82px] outline-zinc-100 text-zinc-800 text-sm md:text-base font-medium font-['Satoshi_Variable']"
-                />
-                <input
-                  type="text"
-                  placeholder="Last name"
-                  className="w-full h-16 md:h-20 px-4 md:px-5 py-4 md:py-6 bg-white rounded-3xl shadow-sm outline outline-[0.82px] outline-offset-[-0.82px] outline-zinc-100 text-zinc-800 text-sm md:text-base font-medium font-['Satoshi_Variable']"
-                />
-              </div>
-              <input
-                type="email"
-                placeholder="E-mail"
-                className="w-full h-16 md:h-20 px-4 md:px-5 py-4 md:py-6 bg-white rounded-3xl shadow-sm outline outline-[0.82px] outline-offset-[-0.82px] outline-zinc-100 text-zinc-800 text-sm md:text-base font-medium font-['Satoshi_Variable']"
-              />
-              <div className="w-full h-16 md:h-20 bg-white rounded-3xl shadow-sm border-[0.82px] border-zinc-100 flex items-center px-4 md:px-5">
-                <div className="flex items-center gap-3 w-full">
-                  <input
-                    type="tel"
-                    placeholder="Phone number"
-                    className="flex-1 bg-transparent outline-none text-zinc-800 text-base md:text-lg font-medium font-['Satoshi_Variable']"
-                  />
-                </div>
-              </div>
-              <textarea
-                placeholder="How Can Help You?"
-                maxLength={240}
-                className="w-full h-48 md:h-64 px-4 md:px-5 py-4 md:py-6 bg-white rounded-3xl shadow-sm outline outline-[0.82px] outline-offset-[-0.82px] outline-zinc-100 text-zinc-800 text-sm md:text-base font-medium font-['Satoshi_Variable'] resize-none"
-              ></textarea>
-              <div className="text-right text-zinc-300 text-sm md:text-base font-medium font-['Satoshi_Variable']">
-                0/240
-              </div>
-              <button
-                type="submit"
-                className="w-full h-14 md:h-20 bg-orange-500 rounded-3xl shadow-sm outline outline-[0.82px] outline-offset-[-0.82px] outline-zinc-100 flex justify-center items-center hover:bg-orange-600 transition-colors"
-              >
-                <div className="text-white text-base md:text-xl font-medium font-['Satoshi_Variable']">
-                  Submit
-                </div>
-              </button>
-            </form>
-          </div>
+          <ContactForm />
         </div>
       </div>
 
       <div className="w-full py-[clamp(30px,3.333335vw,200px)] md:py-24 lg:py-32 relative">
         <div className="container mx-auto px-4 md:px-8 z-10 relative">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-            <div className="w-full lg:w-3/5 h-[300px] md:h-[500px] lg:h-[756px] bg-black/20 rounded-[30px] relative">
+            <a
+              target="_blank"
+              href="https://www.google.com/maps/place/31%C2%B026'20.0%22N+31%C2%B039'20.1%22E/@31.4388924,31.6530075,17z/data=!3m1!4b1!4m4!3m3!8m2!3d31.4388924!4d31.6555824?hl=en&entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D"
+              className="w-full lg:w-3/5 h-[300px] md:h-[500px] lg:h-[756px] bg-black/20 rounded-[30px] relative"
+            >
               <img src="/images/map.png" alt="map" className="w-full h-full" />
               {/* map link */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -223,7 +174,7 @@ const page = () => {
                   <div className="w-3 md:w-4 h-3 md:h-4 bg-blue-500 rounded-xl"></div>
                 </div>
               </div>
-            </div>
+            </a>
 
             {/* map text */}
             <div className="w-full lg:w-2/5 flex flex-col gap-8 md:gap-12">
