@@ -1,4 +1,4 @@
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 const ServiceCard = ({ label }: { label: string }) => {
   const locale = useLocale();
