@@ -57,3 +57,7 @@ select {
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
+
+.mirror{
+  transform: scaleX(-1);
+}

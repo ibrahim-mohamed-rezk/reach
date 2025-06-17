@@ -2,15 +2,18 @@
 
 import { useState } from "react";
 import ServiceCard from "../cards/ServiceCard";
+import { useLocale, useTranslations } from "next-intl";
 
 const Services = () => {
   const [openedService, setOpenedService] = useState("Programming");
+  const locale = useLocale();
+  const t = useTranslations("services");
 
   const services = [
     { label: "Programming" },
     { label: "Digital Marketing" },
-    { label: "Advertising" },
-    { label: "Social Media" },
+    { label: "" },
+    { label: "" },
   ];
 
   return (
@@ -24,13 +27,15 @@ const Services = () => {
         </h2>
         <div className="flex flex-col items-center justify-center w-full">
           <div className="flex flex-wrap relative z-20 justify-center items-center gap-[clamp(2px,0.833334vw,100px)] mb-[clamp(10px,1.667vw,100px)] w-full">
-            {services.map((item) => {
+            {services.map((item, index) => {
               if (item.label === openedService) {
                 return (
                   <div
                     key={item.label}
-                    onClick={() => setOpenedService(item.label)}
-                    className="cursor-pointer w-[20%] relative "
+                    onClick={() => index <= 1 && setOpenedService(item.label)}
+                    className={`cursor-pointer w-[20%] relative ${
+                      locale === "ar" ? "mirror" : ""
+                    }`}
                     data-svg-wrapper
                   >
                     <svg
@@ -66,7 +71,7 @@ const Services = () => {
                           y="0"
                           width="274"
                           height="114"
-                          filterUnits="userSpaceOnUse"  
+                          filterUnits="userSpaceOnUse"
                           colorInterpolationFilters="sRGB"
                         >
                           <feFlood
@@ -101,7 +106,7 @@ const Services = () => {
                       </defs>
                     </svg>
                     <div className="text-white  text-center text-[clamp(5px,1vw,100px)] font-semibold font-['Inter'] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-20 px-2">
-                      {item.label}
+                      {t(item.label)}
                     </div>
                   </div>
                 );
@@ -109,11 +114,13 @@ const Services = () => {
                 return (
                   <div
                     key={item.label}
-                    onClick={() => setOpenedService(item.label)}
-                    className="w-[20%] bg-[#303030] rounded-full border border-[#b0b0b0] justify-center items-center inline-flex cursor-pointer transition-colors hover:bg-[#444444]"
+                    onClick={() => index <= 1 && setOpenedService(item.label)}
+                    className={`w-[20%] bg-[#303030] rounded-full border border-[#b0b0b0] justify-center items-center inline-flex cursor-pointer transition-colors hover:bg-[#444444] ${
+                      index > 1 ? "opacity-0" : ""
+                    }`}
                   >
                     <div className="text-white py-[clamp(5px,1.433334vw,100px)] text-[clamp(5px,1vw,100px)] font-semibold font-['Inter'] text-center">
-                      {item.label}
+                      {t(item.label)}
                     </div>
                   </div>
                 );
@@ -121,7 +128,6 @@ const Services = () => {
           </div>
           <div className="w-full">
             <ServiceCard label={openedService} />
-           
           </div>
         </div>
       </div>
