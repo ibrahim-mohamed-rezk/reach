@@ -54,18 +54,13 @@ export default function TermsPage() {
         <li>
           <strong>{t("contactTitle")}</strong>
           <br />
-          {t.rich("contactContent", {
-            email: () => (
-              <a href="mailto:reach@reachksa.com" className="text-blue-600 ">
-                reach@reachksa.com
-              </a>
-            ),
-            contact: (chunks) => (
-              <Link href="/contact-us" className="text-blue-600 ">
-                {chunks}
-              </Link>
-            ),
-          })}
+          {t("contactContent")}{" "}
+          <Link
+            className={`underline font-bold text-[#f3801e]`}
+            href={"/contact-us"}
+          >
+            {t("contact-us")}
+          </Link>
         </li>
       </ol>
       <h2 className="text-xl font-semibold mt-8 mb-4">{t("faqTitle")}</h2>
@@ -83,14 +78,14 @@ export default function TermsPage() {
         <li>
           <strong>{t("faq3Q")}</strong>
           <br />
-          {t("faq3A")}
-
-          <Link
+          {t("faq3A")}{" "}
+          <a
             className={`underline font-bold text-[#f3801e]`}
-            href={"/contact-us"}
+            href="mailto:reachagency@reachksa.com"
+            target="_blank"
           >
-            t{"contact-us"}
-          </Link>
+            reachagency@reachksa.com
+          </a>
         </li>
       </ol>
     </main>

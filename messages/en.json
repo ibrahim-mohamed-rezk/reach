@@ -56,13 +56,14 @@
     "lawTitle": "Governing Law",
     "lawContent": "These terms and conditions are governed by and interpreted in accordance with the laws of the Kingdom of Saudi Arabia. You agree that any disputes arising from your use of this website will be subject exclusively to the jurisdiction of Saudi courts.",
     "contactTitle": "Contact Us",
-    "contactContent": "If you have any questions or concerns about these terms and conditions, you may contact us at: {email} Or via the Contact Us page.",
+    "contactContent": "If you have any questions or concerns about these terms and conditions, you may contact us at: Or via the",
     "faqTitle": "FAQs",
     "faq1Q": "Can I use content from Reach's website for commercial purposes?",
     "faq1A": "No, the content is for personal use only and may not be reused or published for commercial purposes without written permission.",
     "faq2Q": "Are these terms updated regularly?",
     "faq2A": "Yes, we may update our terms and conditions from time to time. We recommend checking this page periodically for updates.",
     "faq3Q": "How can I reach customer support?",
-    "faq3A": "You can reach us through the Contact Us page or by sending an email to {email}."
+    "faq3A": "You can reach us through the Contact Us page or by sending an email to.",
+    "contact-us": "Contact Us page"
   }
 }
