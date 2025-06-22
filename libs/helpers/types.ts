@@ -97,3 +97,13 @@ export interface TeamMember {
   linkedin_url: string;
   github_url: string;
 }
+
+// Client
+export interface Client {
+  id: number;
+  name: string;
+  logo: string;
+  is_active: boolean;
+  sort_order: number;
+}
+

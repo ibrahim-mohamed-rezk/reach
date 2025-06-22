@@ -33,7 +33,7 @@ export default async function Home() {
       </div>
       <div className="z-[3] relative bg-black">
         <Services />
-        <Clients />
+        <Clients clients={homeData?.clients || []} />
         <Projects projects={homeData?.featured_projects || []} />
         <Blogs blogs={homeData?.featured_posts || []} />
       </div>

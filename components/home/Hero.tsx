@@ -1,9 +1,11 @@
 "use client";
 
 
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 const Hero = () => {
+  const t = useTranslations("endUser");
   return (
     <div className="w-full bg-black ">
       <div className="wfull mx-auto overflow-hidden">
@@ -22,7 +24,7 @@ const Hero = () => {
               <div className="w-0 duration-1000 hover:duration-1000 ease-in-out hover:ease-in-out absolute left-0 rounded-[10px]  h-[100%] bg-[#FF9437] z-0 bg-hover-animation "></div>
             </Link>
             <div className="text-center text-white text-[clamp(16px,1.5625vw,30px)] font-normal mt-[25px] font-['Inter']">
-              Crafting Digital Masterpieces, Daily
+              {t("Driven by Innovation Powered by Results")}
             </div>
             <div className="mt-[40px] w-fit cursor-pointer hover:scale-110 duration-200 flex items-center justify-center fill-svg-orange relative z-40">
               <svg
