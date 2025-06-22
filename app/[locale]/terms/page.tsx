@@ -83,18 +83,14 @@ export default function TermsPage() {
         <li>
           <strong>{t("faq3Q")}</strong>
           <br />
-          {t.rich("faq3A", {
-            email: () => (
-              <a href="mailto:reach@reachksa.com" className="text-blue-600 ">
-                reach@reachksa.com
-              </a>
-            ),
-            contact: (chunks) => (
-              <Link href="/contact-us" className="text-blue-600 ">
-                {chunks}
-              </Link>
-            ),
-          })}
+          {t("faq3A")}
+
+          <Link
+            className={`underline font-bold text-[#f3801e]`}
+            href={"/contact-us"}
+          >
+            t{"contact-us"}
+          </Link>
         </li>
       </ol>
     </main>
