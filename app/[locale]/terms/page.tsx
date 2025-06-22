@@ -90,9 +90,9 @@ export default function TermsPage() {
               </a>
             ),
             contact: (chunks) => (
-              <a href="/contact-us" className="text-blue-600 ">
+              <Link href="/contact-us" className="text-blue-600 ">
                 {chunks}
-              </a>
+              </Link>
             ),
           })}
         </li>
