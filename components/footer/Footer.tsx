@@ -123,7 +123,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/terms"
+                      href="/privacy"
                       className="text-[#b7b7b7] hover:text-white transition"
                     >
                       privacy policy
