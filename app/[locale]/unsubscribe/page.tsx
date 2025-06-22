@@ -83,7 +83,7 @@ export default function UnsubscribePage() {
 
             {/* Main content */}
             <h4 className="text-2xl font-semibold mb-4 text-white">
-              You've been unsubscribed
+              You have been unsubscribed
             </h4>
 
             <div className="space-y-4 mb-8">
