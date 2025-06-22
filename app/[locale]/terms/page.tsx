@@ -1,5 +1,6 @@
 "use client";
 
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
 export default function TermsPage() {
@@ -55,17 +56,14 @@ export default function TermsPage() {
           <br />
           {t.rich("contactContent", {
             email: () => (
-              <a
-                href="mailto:reach@reachksa.com"
-                className="text-blue-600 "
-              >
+              <a href="mailto:reach@reachksa.com" className="text-blue-600 ">
                 reach@reachksa.com
               </a>
             ),
             contact: (chunks) => (
-              <a href="/contact-us" className="text-blue-600 ">
+              <Link href="/contact-us" className="text-blue-600 ">
                 {chunks}
-              </a>
+              </Link>
             ),
           })}
         </li>
@@ -87,10 +85,7 @@ export default function TermsPage() {
           <br />
           {t.rich("faq3A", {
             email: () => (
-              <a
-                href="mailto:reach@reachksa.com"
-                className="text-blue-600 "
-              >
+              <a href="mailto:reach@reachksa.com" className="text-blue-600 ">
                 reach@reachksa.com
               </a>
             ),
