@@ -3,9 +3,11 @@
 import { Client } from "@/libs/helpers/types";
 import useImageUrl from "@/libs/hooks/useImageUrl";
 import React from "react";
+import { useTranslations } from "next-intl";
 
 const Clients = ({ clients }: { clients: Client[] }) => {
-  const imageUrl =useImageUrl();
+  const imageUrl = useImageUrl();
+  const t = useTranslations("clients");
   return (
     <div
       id="clients"
@@ -17,18 +19,16 @@ const Clients = ({ clients }: { clients: Client[] }) => {
             style={{ WebkitTextStroke: "1px #ffffff7d" }}
             className="w-full h-full opacity-10 text-center text-nowrap ml-[-33.33%] text-[#ffffff0a] text-[525px] font-bold font-['Inter'] leading-[525px]"
           >
-            Our Clients
+            {t("title")}
           </h2>
         </div>
 
         <div className="max-w-3xl mx-auto text-center mb-12 px-4">
           <h2 className="text-center text-white text-[clamp(40px,5vw,85px)] font-bold font-['Inter'] leading-[1.1]">
-            Our Clients
+            {t("title")}
           </h2>
           <p className="text-center text-white text-[clamp(16px,2vw,18px)] font-normal font-['Inter'] mt-4 max-w-[756px] mx-auto">
-            Wisdom new and valley answer. Contented it so is discourse
-            recommend. Man its upon him call mile. An pasture he himself believe
-            ferrars besides cottage.
+            {t("description")}
           </p>
         </div>
 
@@ -41,7 +41,11 @@ const Clients = ({ clients }: { clients: Client[] }) => {
                 key={client.id}
                 className="aspect-[5/3] relative rounded-lg shadow-md bg-white flex items-center justify-center p-4"
               >
-                <img className="rounded-lg" src={imageUrl(client.logo)} alt={client.name} />
+                <img
+                  className="rounded-lg"
+                  src={imageUrl(client.logo)}
+                  alt={client.name}
+                />
               </div>
             ))}
           </div>

@@ -12,8 +12,9 @@ const Footer = () => {
     email: "",
   });
   const locale = useLocale();
-  // const t = useTranslations("Footer");
+  const t = useTranslations("endUser");
   const e = useTranslations("Errors");
+  const tHeader = useTranslations("header");
   const handleSubscribe = async () => {
     if (
       !data?.email?.trim() ||
@@ -57,10 +58,8 @@ const Footer = () => {
                 />
               </Link>
               <p className="text-[#b7b7b7] text-[clamp(12px,0.9375vw,40px)] mt-[clamp(5px,0.41666667vw,20px)] font-semibold leading-normal">
-                At <span className="font-bold">Reach</span> Agency, we build
-                genuine partnerships to drive lasting growth through innovative
-                programming and marketing strategies, empowering businesses to
-                become industry leaders.
+                {`${t("at")}`} <span className="font-bold">Reach</span>
+                {` ${t("footerDescription")}`}
               </p>
             </div>
 
@@ -68,7 +67,7 @@ const Footer = () => {
               {/* navigations */}
               <div>
                 <h3 className="text-[clamp(12px,1.04166665vw,100px)] font-bold mb-[clamp(8px,0.833334vw,100px)]">
-                  Links
+                  {t("Links")}
                 </h3>
                 <ul className="gap-[clamp(10px,1.5625vw,100px)] flex flex-col items-start justify-start text-[clamp(12px,1.04166665vw,100px)]">
                   <li>
@@ -76,7 +75,7 @@ const Footer = () => {
                       href="/"
                       className="text-[#b7b7b7] hover:text-white transition"
                     >
-                      Home
+                      {tHeader("home")}
                     </Link>
                   </li>
 
@@ -85,7 +84,7 @@ const Footer = () => {
                       href="/blogs"
                       className="text-[#b7b7b7] hover:text-white transition"
                     >
-                      Blogs
+                      {tHeader("blog")}
                     </Link>
                   </li>
                   <li>
@@ -93,7 +92,7 @@ const Footer = () => {
                       href="/about"
                       className="text-[#b7b7b7] hover:text-white transition"
                     >
-                      About
+                      {tHeader("about")}
                     </Link>
                   </li>
                   <li>
@@ -101,7 +100,7 @@ const Footer = () => {
                       href="/contact-us"
                       className="text-[#b7b7b7] hover:text-white transition"
                     >
-                      Contact Us
+                      {tHeader("contact")}
                     </Link>
                   </li>
                 </ul>
@@ -110,7 +109,7 @@ const Footer = () => {
               {/* support */}
               <div>
                 <h3 className="text-[clamp(12px,1.04166665vw,100px)] font-bold mb-[clamp(8px,0.833334vw,100px)]">
-                  Support
+                  {t("Support")}
                 </h3>
                 <ul className="gap-[clamp(10px,1.5625vw,100px)] flex flex-col items-start justify-start text-[clamp(12px,1.04166665vw,100px)]">
                   <li>
@@ -118,7 +117,7 @@ const Footer = () => {
                       href="/terms"
                       className="text-[#b7b7b7] hover:text-white transition"
                     >
-                      Terms
+                      {t("Terms")}
                     </Link>
                   </li>
                   <li>
@@ -126,7 +125,7 @@ const Footer = () => {
                       href="/privacy"
                       className="text-[#b7b7b7] hover:text-white transition"
                     >
-                      privacy policy
+                      {t("privacy policy")}
                     </Link>
                   </li>
                   <li>
@@ -134,7 +133,7 @@ const Footer = () => {
                       href="/jobs"
                       className="text-[#b7b7b7] hover:text-white transition"
                     >
-                      Join Us
+                      {t("Join Us")}
                     </Link>
                   </li>
                 </ul>
@@ -144,21 +143,21 @@ const Footer = () => {
             {/* subscripe */}
             <div>
               <h3 className="text-[clamp(12px,1.04166665vw,100px)] font-bold mb-[clamp(8px,0.833334vw,100px)]">
-                Get Updates
+                {t("Get Updates")}
               </h3>
               <div className="bg-[#111111] rounded-[10px] border border-[#868686] p-[clamp(4px,0.41666667vw,50px)] flex flex-row items-center gap-[clamp(4px,0.41666667vw,50px)]">
                 <input
                   type="email"
                   value={data?.email}
                   onChange={(e) => setData({ ...data, email: e.target.value })}
-                  placeholder="Enter your email"
+                  placeholder={t("Enter your email")}
                   className="bg-transparent w-full text-[#878787] p-[clamp(4px,0.41666667vw,50px)] flex-grow"
                 />
                 <button
                   onClick={handleSubscribe}
                   className="bg-white text-[#4E4F5D] font-bold py-[clamp(4px,0.41666667vw,50px)] px-[clamp(8px,0.833334vw,100px)] rounded-[10px]"
                 >
-                  Subscribe
+                  {t("Subscribe")}
                 </button>
               </div>
 
@@ -239,7 +238,7 @@ const Footer = () => {
               Reach &copy; 2024
             </div>
             <div className=" text-[clamp(12px,1.04166665vw,100px)]">
-              Reach, All rights reserved
+              {t("All rights reserved")}
             </div>
           </div>
         </div>

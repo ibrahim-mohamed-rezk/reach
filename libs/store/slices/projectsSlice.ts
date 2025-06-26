@@ -17,9 +17,15 @@ const initialState: ProjectsState = {
 
 export const fetchProjects = createAsyncThunk(
   "projects/fetchProjects",
-  async (_, { rejectWithValue }) => {
+  async (locale: string, { rejectWithValue }) => {
     try {
-      const response = await getApi("/api/projects");
+      const response = await getApi(
+        "/api/projects",
+        {},
+        {
+          "accept-language": locale,
+        }
+      );
       return response;
     } catch (error) {
       return rejectWithValue("Failed to fetch projects");

@@ -1,29 +1,31 @@
+import { useTranslations } from "next-intl";
+
 const MoveFast = () => {
+  const t = useTranslations("endUser");
   return (
     <div className="w-full bg-black relative overflow-hidden move-fast-container ">
       <div className="w-full  pt-[clamp(150px,14.84375vw,295px)] pb-[clamp(100px,9.0104166vw,183px)] ">
         <div className="w-full flex items-center z-10 relative justify-center flex-col py-[50px] move-to-top duration-[2s] ease-in-out">
           <div>
             <span className="text-white text-[clamp(20px,4.0104167vw,77px)] font-extralight font-['Inter'] leading-[clamp(20px,4.0104167vw,77px)]">
-              Move
-            </span>
+              {t("MoveFastTitle1")}
+            </span>{" "}
             <span className="text-[#f3801e] text-[clamp(20px,4.0104167vw,77px)] font-normal font-['Inter'] leading-[clamp(20px,4.0104167vw,77px)]">
-              fast.
-            </span>
+              {t("MoveFastTitle2")}
+            </span>{" "}
             <span className="text-white text-[clamp(20px,4.0104167vw,77px)] font-extralight font-['Inter'] leading-[clamp(20px,4.0104167vw,77px)]">
-              Stay
-            </span>
+              {t("MoveFastTitle3")}
+            </span>{" "}
             <span className="text-[#f3801e] text-[clamp(20px,4.0104167vw,77px)] font-normal font-['Inter'] leading-[clamp(20px,4.0104167vw,77px)]">
-              flexible
+              {t("MoveFastTitle4")}
             </span>
           </div>
           <div className="max-w-7xl mx-auto text-center text-white/80 text-[clamp(12px,1.04166665vw,21px)] font-normal mt-[clamp(20px,2.5vw,48px)] font-DmSans leading-loose tracking-tight">
-            Speed fuels innovation. Never lag behind of technology. Stay ahead
-            of your time. Stay flexible.
+            {t("MoveFastDescription")}
           </div>
           <div className="h-10 justify-center items-center gap-[5.33px] mt-[clamp(20px,2.5vw,48px)] inline-flex">
             <div className="text-center  text-white text-clamp(14px,1.25vw,24px) font-normal hover:text-[#FFDC53] cursor-pointer font-LeagueSpartan leading-10">
-              View Marketing Strategy
+              {t("MoveFastCTA")}
             </div>
             <div data-svg-wrapper className="relative">
               <svg

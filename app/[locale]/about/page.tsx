@@ -3,8 +3,10 @@ import Team from "./Team";
 import Hero from "./Hero";
 import "@/public/css/about.css";
 import About from "@/components/home/About";
+import { getTranslations } from "next-intl/server";
 
-const page = () => {
+const page = async () => {
+  const tServices = await getTranslations("services");
   return (
     <div className="w-full min-h-screen relative">
       {/* about hero */}
@@ -22,15 +24,18 @@ const page = () => {
       <div className="w-full py-16 px-[5px] lg:px-[clamp(0px,6.25vw,120px)] relative ">
         <div className="flex flex-col mt-3 lg:flex-row items-end justify-between z-10 relative mb-10">
           <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
-            <h2 className="text-4xl md:text-6xl lg:text-8xl text-white font-bold font-['Inter'] leading-tight">
-              WHY <br /> CHOOSE <br /> US?
-            </h2>
+            <h2
+              className="text-4xl md:text-6xl lg:text-8xl text-white font-bold font-['Inter'] leading-tight"
+              dangerouslySetInnerHTML={{
+                __html: tServices("whyChooseUsTitle"),
+              }}
+            />
           </div>
           <div className="w-full lg:w-1/2">
             <ul className="text-gray-400 text-2xl md:text-3xl lg:text-5xl list-disc gap-10 flex flex-col items-start justify-start font-normal font-['Inter'] leading-relaxed">
-              <li>Custom Solutions</li>
-              <li>Technical Expertise</li>
-              <li>Marketing + Development under one roof</li>
+              <li>{tServices("customSolutions")}</li>
+              <li>{tServices("technicalExpertise")}</li>
+              <li>{tServices("marketingDevelopment")}</li>
             </ul>
           </div>
         </div>

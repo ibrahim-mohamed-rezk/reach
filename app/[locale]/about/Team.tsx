@@ -1,5 +1,6 @@
 import { getApi } from "@/libs/axios/backend";
 import { TeamMember } from "@/libs/helpers/types";
+import { getTranslations } from "next-intl/server";
 
 const Team = async () => {
   const mainUrl = process.env.NEXT_PUBLIC_Backend_URL;
@@ -12,6 +13,7 @@ const Team = async () => {
     }
   };
   const teamMembers: TeamMember[] = await feachData();
+  const t = await getTranslations("about");
 
   const TeamMemberCard = ({ member }: { member: TeamMember | null }) => (
     <div className="flex flex-col justify-start items-center gap-[clamp(2px,1.25vw,100px)]">
@@ -44,7 +46,7 @@ const Team = async () => {
 
       {/* Section Title */}
       <div className="relative w-full text-center mb-16 md:mb-24  text-white text-[clamp(10px,5.0vw,196px)] font-bold font-['Satoshi_Variable'] capitalize z-10">
-        meet team
+        {t("meet team")}
       </div>
 
       {/* CEO Section */}

@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import FloatingImages from "./FloatingImages";
+import { useTranslations } from "next-intl";
 
 const Hero = () => {
   // Use refs for position and direction to avoid re-renders causing animation issues
@@ -9,6 +10,7 @@ const Hero = () => {
   const [displayPosition, setDisplayPosition] = useState({ left: 0, top: 0 });
   const containerRef = useRef<HTMLDivElement | null>(null);
   const animationRef = useRef<number | null>(null);
+  const t = useTranslations("about");
 
   useEffect(() => {
     // Set initial position within container bounds
@@ -46,7 +48,7 @@ const Hero = () => {
       const elementHeight = Math.min(1700, containerWidth * 0.36458);
 
       // Speed factor for animation
-      const speed = .6;
+      const speed = 0.6;
 
       // Calculate new position
       let newLeft = positionRef.current.left + speed * directionRef.current.x;
@@ -113,7 +115,7 @@ const Hero = () => {
       <div className="w-[clamp(100px,48.646vw,1934px)] h-[clamp(100px,48.646vw,1934px)] translate-x-[-50%]  right-0 md:left-1/2 top-1/2 md:top-[-7px] absolute opacity-50 bg-orange-500 rounded-full blur-[150px]" />
       {/* hero title */}
       <div className="w-full text-center relative justify-start text-white text-[clamp(10px,8vw,260px)] font-bold font-['Inter']">
-        About Us
+        {t("heroTitle")}
       </div>
       <div className="w-full left-0 top-0 absolute">
         {/* Desktop view - original floating elements, hidden on mobile */}

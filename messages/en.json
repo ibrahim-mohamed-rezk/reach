@@ -5,7 +5,8 @@
     "services": "Services",
     "contact": "Contact Us",
     "blog": "Blog",
-    "clients": "Clients"
+    "clients": "Clients",
+    "projects": "Projects"
   },
   "endUser": {
     "Driven by Innovation Powered by Results": "Driven by Innovation. Powered by Results.",
@@ -33,7 +34,28 @@
     "dataRetentionContent2": "For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can view, edit, or delete their personal information at any time (except their username). Website administrators can also view and edit that information.",
     "yourRightsTitle": "What rights you have over your data",
     "yourRightsContent1": "If you have an account on this site or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you've provided. You can also request that we erase any personal data we hold about you.",
-    "yourRightsContent2": "This does not include any data we are obliged to keep for administrative, legal, or security purposes."
+    "yourRightsContent2": "This does not include any data we are obliged to keep for administrative, legal, or security purposes.",
+    "at": "At",
+    "footerDescription": " we redefine digital growth through intelligent programming and marketing solutions. Driven by innovation and powered by technology, we craft strategies that deliver measurable results—empowering our clients to lead, adapt, and thrive in a rapidly evolving market.",
+    "Links": "Links",
+    "Support": "Support",
+    "Terms": "Terms",
+    "privacy policy": "Privacy Policy",
+    "Join Us": "Join Us",
+    "Get Updates": "Get Updates",
+    "Enter your email": "Enter your email",
+    "Subscribe": "Subscribe",
+    "All rights reserved": "All rights reserved",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    "MoveFastTitle1": "Move",
+    "MoveFastTitle2": "fast.",
+    "MoveFastTitle3": "Stay",
+    "MoveFastTitle4": "flexible",
+    "MoveFastDescription": "Speed fuels innovation. Never lag behind of technology. Stay ahead of your time. Stay flexible.",
+    "MoveFastCTA": "View Marketing Strategy"
   },
   "terms": {
     "title": "Terms and Conditions for Reach Website",
@@ -50,7 +72,7 @@
     "privacyContent": "We are committed to protecting your personal information in accordance with our Privacy Policy. We encourage you to read the policy to understand how we collect, use, and safeguard your data.",
     "disclaimerTitle": "Warranties and Disclaimers",
     "disclaimerAccuracy": "Accuracy: We strive to provide accurate and up-to-date information on the website. However, we do not guarantee that all information is complete or error-free. If you find any errors, please contact us for correction.",
-    "disclaimerLiability": "Disclaimer: The content on the website is provided “as is” with no warranties of any kind. We are not liable for any damages resulting from the use of the site or reliance on its information.",
+    "disclaimerLiability": "Disclaimer: The content on the website is provided as is with no warranties of any kind. We are not liable for any damages resulting from the use of the site or reliance on its information.",
     "modificationsTitle": "Modifications to Terms",
     "modificationsContent": "Reach reserves the right to modify or update these terms at any time without prior notice. It is advisable to review this page periodically for any changes. Continued use of the website after changes constitutes acceptance of those changes.",
     "lawTitle": "Governing Law",
@@ -65,5 +87,67 @@
     "faq3Q": "How can I reach customer support?",
     "faq3A": "You can reach us through the Contact Us page or by sending an email to.",
     "contact-us": "Contact Us page"
+  },
+  "about": {
+    "aboutTitle": "About ",
+    "reach": "Reach",
+    "aboutParagraph1": "At Reach Agency, we understand that every business is unique. But when it comes to achieving lasting growth, we believe in a core set of principles that drive success. We're not just about delivering results - we're about building genuine partnerships that unlock your full potential.",
+    "aboutParagraph2": "We envision a future where we are the catalyst for transformative business growth. By pioneering cutting-edge programming and marketing strategies, we empower our clients to become industry leaders who leave a lasting legacy of innovation.",
+    "innovationTitle": "Innovation",
+    "technologyTitle": "Technology",
+    "growthTitle": "Growth",
+    "heroTitle": "About Us",
+    "meet team": "Meet Our Team"
+  },
+  "services": {
+    "title": "Our Services",
+    "Programming": "Programming",
+    "Digital Marketing": "Digital Marketing",
+    "heroAlt": "Services Hero",
+    "weOffer": "We Offer",
+    "smart": "Smart",
+    "scalable": "Scalable",
+    "digital": "Digital",
+    "solutions": "Solutions",
+    "fromBrandingToMobileApps": "From branding to mobile apps - all in one place",
+    "whyChooseUsTitle": "WHY<br />CHOOSE<br />US?",
+    "customSolutions": "Custom Solutions",
+    "technicalExpertise": "Technical Expertise",
+    "marketingDevelopment": "Marketing + Development under one roof"
+  },
+  "clients": {
+    "title": "Our Clients",
+    "description": "We are proud to have collaborated with a diverse range of clients, each contributing to our journey of excellence and innovation."
+  },
+  "projects": {
+    "title": "Our Projects",
+    "ticker": {
+      "creative": "Creative Showcases",
+      "webapp": "Web & App Projects",
+      "clientsuccess": "Client Success Stories",
+      "marketing": "Marketing Insights",
+      "uiux": "UI/UX Highlights",
+      "tech": "Tech Innovations",
+      "brand": "Brand Transformations",
+      "growth": "Growth Metrics",
+      "design": "Design Concepts",
+      "campaign": "Campaign Spotlights",
+      "industry": "Industry Trends"
+    },
+    "background": "Projects",
+    "hero": {
+      "line1": "A Glimpse Into What",
+      "line2": "We've Created for",
+      "line3": "Brands",
+      "line4": "Like Yours"
+    },
+    "loading": "Loading...",
+    "error": "An error occurred. Please try again."
+  },
+  "blogs": {
+    "title": "Latest blog posts",
+    "description": "Thoughts on design, software and productivity.",
+    "bannerTitle": "Welcome to the Reach blog",
+    "bannerSubtitle": "Invoicing and Business tips for small businesses and freelancers."
   }
 }

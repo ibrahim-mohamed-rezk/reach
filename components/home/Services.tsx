@@ -23,7 +23,7 @@ const Services = () => {
     >
       <div className="w-full flex flex-col pt-[clamp(100px,5.15625vw,200px)] justify-center items-center">
         <h2 className="text-center  text-white text-4xl sm:text-5xl md:text-6xl lg:text-[103.53px] font-semibold font-['Inter'] mb-12">
-          Our Services
+          {t("title")}
         </h2>
         <div className="flex flex-col items-center justify-center w-full">
           <div className="flex flex-wrap relative z-20 justify-center items-center gap-[clamp(2px,0.833334vw,100px)] mb-[clamp(10px,1.667vw,100px)] w-full">
@@ -105,8 +105,13 @@ const Services = () => {
                         </filter>
                       </defs>
                     </svg>
-                    <div className="text-white  text-center text-[clamp(5px,1vw,100px)] font-semibold font-['Inter'] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-20 px-2">
-                      {t(item.label)}
+                    <div
+                      className={`text-white ${
+                        locale === "ar" ? "mirror -mt-[clamp(5px,0.625vw,200px)] " : " left-1/2 "
+                      }
+                     text-center text-[clamp(5px,1vw,100px)] font-semibold font-['Inter'] absolute top-1/2  transform -translate-x-1/2 -translate-y-1/2 w-full z-20 px-2`}
+                    >
+                      {item.label ? t(item.label) : ""}
                     </div>
                   </div>
                 );
@@ -120,7 +125,7 @@ const Services = () => {
                     }`}
                   >
                     <div className="text-white py-[clamp(5px,1.433334vw,100px)] text-[clamp(5px,1vw,100px)] font-semibold font-['Inter'] text-center">
-                      {t(item.label)}
+                      {item.label ? t(item.label) : ""}
                     </div>
                   </div>
                 );

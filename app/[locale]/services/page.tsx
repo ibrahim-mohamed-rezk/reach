@@ -1,11 +1,21 @@
 import ServicesCard from "@/components/cards/ServicesCard";
 import { getApi } from "@/libs/axios/backend";
 import { FeaturedService } from "@/libs/helpers/types";
+import { getTranslations } from "next-intl/server";
 
-const page = async () => {
+const page = async ({ params }: { params: Promise<{ locale: string }> }) => {
+  const paramsData = await params;
+  const t = await getTranslations("services");
+
   const feachData = async () => {
     try {
-      const response = await getApi("api/services", {}, {});
+      const response = await getApi(
+        "api/services",
+        {},
+        {
+          "accept-language": paramsData.locale,
+        }
+      );
       return response.data;
     } catch (error) {
       throw error;
@@ -23,23 +33,22 @@ const page = async () => {
             <img
               className="w-full h-full"
               src="/images/servicesHero.png"
-              alt="Services Hero"
+              alt={t("heroAlt", { defaultValue: "Services Hero" })}
             />
           </div>
 
           <div className="text-white font-Inter flex leading-tight flex-col text-center md:text-start text-[clamp(10px,4.20834vw,120px)] -ms-[clamp(20px,6.20834vw,200px)]">
-            <span className="font-bold">We Offer</span>
-            <span className="font-bold">Smart,</span>
-            <span className="font-bold">Scalable</span>
-            <span className="font-bold">Digital</span>
-            <span className="font-bold">Solutions</span>
+            <span className="font-bold">{t("weOffer")}</span>
+            <span className="font-bold">{t("smart")},</span>
+            <span className="font-bold">{t("scalable")}</span>
+            <span className="font-bold">{t("digital")}</span>
+            <span className="font-bold">{t("solutions")}</span>
           </div>
 
           {/* Small text at bottom right */}
           <div className="text-stsrt font-Inter text-white self-end mb-4 ms-[clamp(0px,6.25vw,200px)] ">
             <p className="text-[clamp(8px,1.19791667vw,50px)]">
-              From branding to mobile apps
-              <br />- all in one place
+              {t("fromBrandingToMobileApps")}
             </p>
           </div>
         </div>
@@ -56,15 +65,16 @@ const page = async () => {
       <div className="w-full py-16 px-[5px] lg:px-[clamp(0px,6.25vw,120px)] relative ">
         <div className="flex flex-col mt-3 lg:flex-row items-end justify-between z-10 relative mb-10">
           <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
-            <h2 className="text-4xl md:text-6xl lg:text-8xl text-white font-bold font-['Inter'] leading-tight">
-              WHY <br /> CHOOSE <br /> US?
-            </h2>
+            <h2
+              className="text-4xl md:text-6xl lg:text-8xl text-white font-bold font-['Inter'] leading-tight"
+              dangerouslySetInnerHTML={{ __html: t("whyChooseUsTitle") }}
+            />
           </div>
           <div className="w-full lg:w-1/2">
             <ul className="text-gray-400 text-2xl md:text-3xl lg:text-5xl list-disc gap-10 flex flex-col items-start justify-start font-normal font-['Inter'] leading-relaxed">
-              <li>Custom Solutions</li>
-              <li>Technical Expertise</li>
-              <li>Marketing + Development under one roof</li>
+              <li>{t("customSolutions")}</li>
+              <li>{t("technicalExpertise")}</li>
+              <li>{t("marketingDevelopment")}</li>
             </ul>
           </div>
         </div>

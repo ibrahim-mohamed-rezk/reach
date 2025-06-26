@@ -8,11 +8,23 @@ import Services from "@/components/home/Services";
 import { getApi } from "@/libs/axios/backend";
 import "@/public/css/home.css";
 
-export default async function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const paramsData = await params;
+  console.log(paramsData.locale);
   // feach HomeData from api
   const fetchHomeData = async () => {
     try {
-      const response = await getApi("/api/home");
+      const response = await getApi(
+        "/api/home",
+        {},
+        {
+          "accept-language": paramsData.locale,
+        }
+      );
       const data = await response.data;
       return data;
     } catch (error) {

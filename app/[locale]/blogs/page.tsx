@@ -3,6 +3,7 @@ import Pagination from "@/components/pagination/Pagination";
 import { Link } from "@/i18n/navigation";
 import { getApi } from "@/libs/axios/backend";
 import { FeaturedPost, Meta } from "@/libs/helpers/types";
+import { getTranslations } from "next-intl/server";
 
 const page = async ({
   params,
@@ -15,6 +16,7 @@ const page = async ({
   const { locale } = await params;
   const { page: pageParam } = await searchParams;
   const pageNum = parseInt(pageParam || "1");
+  const t = await getTranslations("blogs");
 
   const getBlogs = async () => {
     try {
@@ -47,11 +49,10 @@ const page = async ({
       <div className="w-full h-auto py-[clamp(40px,4.20834vw,80px)] relative overflow-hidden bg-orange-500">
         <div className="w-full px-[clamp(10px,2.08333vw,40px)] flex flex-col items-center justify-center gap-[clamp(10px,1.125vw,50px)]">
           <div className="text-center text-neutral-950 text-[clamp(18px,3.645835vw,90px)] font-semibold font-['Inter'] leading-[1.2]">
-            Welcome to the <br /> Hasten blog
+            {t("bannerTitle")}
           </div>
           <div className="text-center text-neutral-700 text-[clamp(10px,1.25vw,30px)] font-normal font-['Inter'] leading-relaxed max-w-[90%] md:max-w-[70%] lg:max-w-[60%]">
-            Invoicing and Business tips for small businesses <br /> and
-            freelancers.
+            {t("bannerSubtitle")}
           </div>
         </div>
       </div>
@@ -80,7 +81,7 @@ const page = async ({
               alt="blog"
               className="w-[clamp(100px,53.3854164vw,2000px)] h-auto aspect-[1025.06/553.80] rounded-xl"
               src={
-                `https://dashboard.reachksa.com${data[0]?.featured_image}` || 
+                `https://dashboard.reachksa.com${data[0]?.featured_image}` ||
                 "https://placehold.co/759x427"
               }
             />
