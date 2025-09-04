@@ -1,8 +1,8 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import ContactForm from "./components/ContactForm";
 
-const page = () => {
-  const t = useTranslations("contactPage");
+const page = async () => {
+  const t = await getTranslations("contactPage");
   return (
     <div className="w-full min-h-screen relative">
       <div className="w-full relative bg-orange-500/10 py-16 md:py-24 lg:py-32">
