@@ -6,7 +6,8 @@
     "contact": "اتصل بنا",
     "blog": "المدونة",
     "clients": "عملائنا",
-    "projects": "المشاريع"
+    "projects": "المشاريع",
+    "joinUs": "انضم إلينا"
   },
   "endUser": {
     "privacyPolicyTitle": "سياسة الخصوصية",
@@ -46,9 +47,6 @@
     "Subscribe": "اشترك",
     "All rights reserved": "جميع الحقوق محفوظة",
     "Driven by Innovation Powered by Results": "نقود الابتكار، ونحقق النتائج",
-    "": "",
-    "": "",
-    "": "",
     "MoveFastTitle1": "تحرك",
     "MoveFastTitle2": "بسرعة.",
     "MoveFastTitle3": "ابقَ",

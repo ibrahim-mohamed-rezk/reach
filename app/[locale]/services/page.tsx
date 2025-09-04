@@ -38,11 +38,23 @@ const page = async ({ params }: { params: Promise<{ locale: string }> }) => {
           </div>
 
           <div className="text-white font-Inter flex leading-tight flex-col text-center md:text-start text-[clamp(10px,4.20834vw,120px)] -ms-[clamp(20px,6.20834vw,200px)]">
-            <span className="font-bold">{t("weOffer")}</span>
-            <span className="font-bold">{t("smart")},</span>
-            <span className="font-bold">{t("scalable")}</span>
-            <span className="font-bold">{t("digital")}</span>
-            <span className="font-bold">{t("solutions")}</span>
+            {paramsData.locale?.startsWith("ar") ? (
+              <>
+                <span className="font-bold">{t("weOffer")}</span>
+                <span className="font-bold">{t("solutions")}</span>
+                <span className="font-bold">{t("digital")}</span>
+                <span className="font-bold">{t("smart")}،</span>
+                <span className="font-bold">{t("scalable")}</span>
+              </>
+            ) : (
+              <>
+                <span className="font-bold">{t("weOffer")}</span>
+                <span className="font-bold">{t("smart")},</span>
+                <span className="font-bold">{t("scalable")}</span>
+                <span className="font-bold">{t("digital")}</span>
+                <span className="font-bold">{t("solutions")}</span>
+              </>
+            )}
           </div>
 
           {/* Small text at bottom right */}

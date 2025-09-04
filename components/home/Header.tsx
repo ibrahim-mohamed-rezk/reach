@@ -30,6 +30,7 @@ const Header = () => {
     { label: tHeader("projects"), href: "/projects" },
     { label: tHeader("blog"), href: "/blogs" },
     { label: tHeader("about"), href: "/about" },
+    { label: tHeader("joinUs"), href: "/jobs" },
   ];
 
   const changeLanguage = (l: string) => {
