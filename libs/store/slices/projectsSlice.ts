@@ -33,6 +33,24 @@ export const fetchProjects = createAsyncThunk(
   }
 );
 
+export const fetchProgrammingProjects = createAsyncThunk(
+  "projects/fetchProgrammingProjects",
+  async (locale: string, { rejectWithValue }) => {
+    try {
+      const response = await getApi(
+        "api/projects/programming",
+        {},
+        {
+          "accept-language": locale,
+        }
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue("Failed to fetch programming projects");
+    }
+  }
+);
+
 export const fetchProjectBySlug = createAsyncThunk(
   "projects/fetchProjectBySlug",
   async (slug: string, { rejectWithValue }) => {
@@ -63,6 +81,21 @@ export const projectsSlice = createSlice({
         }
       )
       .addCase(fetchProjects.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(fetchProgrammingProjects.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(
+        fetchProgrammingProjects.fulfilled,
+        (state, action: PayloadAction<FeaturedProject[]>) => {
+          state.projects = action.payload;
+          state.loading = false;
+        }
+      )
+      .addCase(fetchProgrammingProjects.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       })

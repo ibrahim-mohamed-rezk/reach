@@ -7,7 +7,9 @@
     "blog": "Blog",
     "clients": "Clients",
     "projects": "Projects",
-    "joinUs": "Join Us"
+    "joinUs": "Join Us",
+    "programming": "Programming",
+    "marketing": "Marketing"
   },
   "endUser": {
     "Driven by Innovation Powered by Results": "Driven by Innovation. Powered by Results.",

@@ -15,6 +15,7 @@ const Header = () => {
   const pathname = usePathname();
   const locale = useLocale();
   const [langOpen, setLangOpen] = useState(false);
+  const [projectsOpenMobile, setProjectsOpenMobile] = useState(false);
   const langRef = useRef(null);
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -55,19 +56,62 @@ const Header = () => {
           {/* navigation links */}
           <div className="py-[0.22px] hidden lg:flex justify-center items-center ">
             <div className="self-stretch p-[7.79px] justify-start items-center gap-[30px] inline-flex">
-              {navItems.map((item) => (
-                <div
-                  key={item.label}
-                  className={`text-white z-50 relative flex items-center rounded-[5px] justify-center  m-0 text-base font-normal font-['Archivo'] hover:scale-110 duration-300 hover:bg-[#ff9437] px-[15px] py-[3px]  ${
-                    pathname === item.href
-                      ? " text-white  bg-[#f3801e]"
-                      : "text-white"
-                  }
-                  `}
-                >
-                  <Link href={item.href}>{item.label}</Link>
-                </div>
-              ))}
+              {navItems.map((item) => {
+                const isProjects = item.href === "/projects";
+                const isActive = isProjects
+                  ? pathname === "/projects" || pathname === "/programming"
+                  : pathname === item.href;
+
+                if (isProjects) {
+                  return (
+                    <div key={item.label} className="relative group">
+                      <div
+                        className={`text-white z-50 relative flex items-center rounded-[5px] justify-center m-0 text-base font-normal font-['Archivo'] hover:scale-110 duration-300 hover:bg-[#ff9437] px-[15px] py-[3px] ${
+                          isActive ? " text-white  bg-[#f3801e]" : "text-white"
+                        }`}
+                      >
+                        <span>{item.label}</span>
+                      </div>
+                      <div className="absolute start-[-9%] top-[82%] mt-2 w-fit opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 z-50">
+                        <div className="bg-[#0f0f0f] border border-[#f3801e] rounded-xl shadow-2xl overflow-hidden">
+                          <Link
+                            href="/programming"
+                            className={`block ${
+                              locale === "ar" ? "px-4" : " px-1 "
+                            } py-2 hover:bg-[#ff9437] text-white ${
+                              pathname === "/programming" ? "bg-[#f3801e]" : ""
+                            }`}
+                          >
+                            {tHeader("programming")}
+                          </Link>
+                          <Link
+                            href="/projects"
+                            className={`block  ${
+                              locale === "ar" ? "px-4" : " px-1 "
+                            } py-2 hover:bg-[#ff9437] text-white ${
+                              pathname === "/projects" ? "bg-[#f3801e]" : ""
+                            }`}
+                          >
+                            {tHeader("marketing")}
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+
+                return (
+                  <div
+                    key={item.label}
+                    className={`text-white z-50 relative flex items-center rounded-[5px] justify-center  m-0 text-base font-normal font-['Archivo'] hover:scale-110 duration-300 hover:bg-[#ff9437] px-[15px] py-[3px]  ${
+                      isActive ? " text-white  bg-[#f3801e]" : "text-white"
+                    }
+                    `}
+                  >
+                    <Link href={item.href}>{item.label}</Link>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
@@ -183,20 +227,73 @@ const Header = () => {
 
             {/* Mobile navigation links */}
             <div className="px-2 pt-16 pb-3 space-y-1 flex flex-col items-start justify-center w-full sm:px-3">
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className={`w-[80%] mx-auto flex items-center rounded-[15px] justify-center hover:bg-[#ff9437] px-3 py-2 text-base font-medium ${
-                    pathname === item.href
-                      ? " text-white  bg-[#f3801e]"
-                      : "text-white"
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const isProjects = item.href === "/projects";
+                const isActive = isProjects
+                  ? pathname === "/projects" || pathname === "/programming"
+                  : pathname === item.href;
+
+                if (isProjects) {
+                  return (
+                    <div key={item.label} className="w-full">
+                      <button
+                        className={`w-[80%] mx-auto flex items-center rounded-[15px] justify-between px-3 py-2 text-base font-medium ${
+                          isActive
+                            ? " text-white  bg-[#f3801e]"
+                            : "text-white hover:bg-[#ff9437]"
+                        }`}
+                        onClick={() => setProjectsOpenMobile((o) => !o)}
+                      >
+                        <span>{item.label}</span>
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform ${
+                            projectsOpenMobile ? "rotate-180" : "rotate-0"
+                          }`}
+                        />
+                      </button>
+                      {projectsOpenMobile && (
+                        <div className="w-[75%] mx-auto mt-1 space-y-1">
+                          <Link
+                            href="/programming"
+                            className={`block w-full rounded-[12px] px-3 py-2 text-base ${
+                              pathname === "/programming"
+                                ? " text-white  bg-[#f3801e]"
+                                : "text-white hover:bg-[#ff9437]"
+                            }`}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {tHeader("programming")}
+                          </Link>
+                          <Link
+                            href="/projects"
+                            className={`block w-full rounded-[12px] px-3 py-2 text-base ${
+                              pathname === "/projects"
+                                ? " text-white  bg-[#f3801e]"
+                                : "text-white hover:bg-[#ff9437]"
+                            }`}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {tHeader("marketing")}
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={`w-[80%] mx-auto flex items-center rounded-[15px] justify-center hover:bg-[#ff9437] px-3 py-2 text-base font-medium ${
+                      isActive ? " text-white  bg-[#f3801e]" : "text-white"
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
 
               <div className="w-[90%] !mt-5 mx-auto border-b border-[#f3811e70]"></div>
 
