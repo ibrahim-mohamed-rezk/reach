@@ -121,6 +121,7 @@
   "projects": {
     "title": "مشاريعنا",
     "seeMore": "عرض المزيد",
+    "RequestService": "طلب الخدمة",
     "ticker": {
       "creative": "أعمال إبداعية",
       "webapp": "مشاريع مواقع وتطبيقات",

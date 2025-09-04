@@ -118,6 +118,7 @@
   "projects": {
     "title": "Our Projects",
     "seeMore": "See More",
+    "RequestService": "Request service",
     "ticker": {
       "creative": "Creative Showcases",
       "webapp": "Web & App Projects",

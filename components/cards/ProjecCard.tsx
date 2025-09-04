@@ -25,7 +25,7 @@ const ProjecCard = ({ project }: { project: FeaturedProject }) => {
             className="text-white text-[clamp(6px,0.833334vw,30px)] font-semibold mb-[clamp(8px,1.8625vw,50px)]"
           />
 
-          <CTAanimatedBTN slug={project?.slug || ""} />
+          <CTAanimatedBTN title="seeMore" url={`/projects/${project?.slug}`} />
         </div>
 
         <div className="overflow-hidden w-[57%] rounded-[clamp(6px,0.625vw,20px)] p-[clamp(4px,1.25vw,60px)] relative">
