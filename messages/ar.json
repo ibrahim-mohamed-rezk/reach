@@ -150,5 +150,20 @@
     "description": "أفكار حول التصميم والبرمجيات والإنتاجية.",
     "bannerTitle": "مرحبًا بكم في مدونة ٌReach",
     "bannerSubtitle": "نصائح الفوترة والأعمال للشركات الصغيرة والمستقلين."
+  },
+  "contactPage": {
+    "title": "اتصل بنا",
+    "subtitleLine1": "راسلنا عبر البريد أو اتصل بنا أو املأ النموذج لمعرفة كيف",
+    "subtitleLine2": "يمكن لـ Snappy حل مشكلة المراسلة لديك",
+    "customerSupport": "دعم العملاء",
+    "ourLocation": "موقعنا",
+    "connectingNearFar": "نصل القريب والبعيد",
+    "headquarters": "المقر الرئيسي",
+    "addressLine1": " دمياط - دمياط الجديدة -",
+    "addressLine2": "نهاية الصعيدي بجوار كليه طب الازهر",
+    "addressLine3": " المملكة العربية السعودية -",
+    "addressLine4":"جده - اعمار اسكوبر",
+
+    "openGoogleMap": "افتح خرائط جوجل"
   }
 }

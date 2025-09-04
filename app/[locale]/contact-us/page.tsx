@@ -1,6 +1,8 @@
+import { useTranslations } from "next-intl";
 import ContactForm from "./components/ContactForm";
 
 const page = () => {
+  const t = useTranslations("contactPage");
   return (
     <div className="w-full min-h-screen relative">
       <div className="w-full relative bg-orange-500/10 py-16 md:py-24 lg:py-32">
@@ -10,20 +12,20 @@ const page = () => {
             <div className="w-full flex flex-col justify-start items-start gap-6 md:gap-9">
               <div className="w-full flex flex-col justify-start items-start gap-3.5">
                 <h1 className="text-white text-4xl md:text-6xl lg:text-8xl font-bold font-['Satoshi_Variable'] capitalize">
-                  Contact Us
+                  {t("title")}
                 </h1>
                 <p className="text-neutral-200 text-base md:text-xl font-normal font-['Satoshi_Variable']">
-                  Email, call, or complete the form to learn how
+                  {t("subtitleLine1")}
                   <br className="hidden md:block" />
-                  Snappy can solve your messaging problem
+                  {t("subtitleLine2")}
                 </p>
               </div>
               <a
-                href="mailto:reachagency@reachksa.com"
+                href="mailto:info@reachksa.com"
                 target="_blank"
                 className="text-neutral-200 text-base md:text-xl font-normal font-['Satoshi_Variable']"
               >
-                reachagency@reachksa.com
+                info@reachksa.com
               </a>
               <div className="text-neutral-200 text-base md:text-xl font-normal font-['Satoshi_Variable']">
                 +201551039398
@@ -33,7 +35,7 @@ const page = () => {
                 target="_blank"
                 className="text-white text-base md:text-xl font-bold font-['Satoshi_Variable'] underline capitalize"
               >
-                customer support
+                {t("customerSupport")}
               </a>
             </div>
 
@@ -76,7 +78,28 @@ const page = () => {
                 </svg>
               </a>
               <a
-                href="mailto:reachagency@reachksa.com"
+                href="https://www.linkedin.com/company/reach-agency-company/posts/?feedView=all"
+                target="_blank"
+                className="bg-[#111111] w-[66px] h-[66px] flex items-center justify-center rounded-full border border-[#868686] p-4 hover:bg-[#444444] transition"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
+              <a
+                href="mailto:info@reachksa.com"
                 target="_blank"
                 className="bg-[#111111] w-[66px] h-[66px] flex items-center justify-center rounded-full border border-[#868686] p-4 hover:bg-[#444444] transition"
               >
@@ -123,7 +146,7 @@ const page = () => {
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
             <a
               target="_blank"
-              href="https://www.google.com/maps/place/31%C2%B026'20.0%22N+31%C2%B039'20.1%22E/@31.4388924,31.6530075,17z/data=!3m1!4b1!4m4!3m3!8m2!3d31.4388924!4d31.6555824?hl=en&entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D"
+              href="https://maps.app.goo.gl/rLS51fveCVWVtw8G9?g_st=aw"
               className="w-full lg:w-3/5 h-[300px] md:h-[500px] lg:h-[756px] bg-black/20 rounded-[30px] relative"
             >
               <img src="/images/map.png" alt="map" className="w-full h-full" />
@@ -151,7 +174,7 @@ const page = () => {
                     </div>
                     <div className="flex items-center gap-1">
                       <div className="text-black text-xs md:text-sm font-semibold font-['Inter']">
-                        Open Google Mape
+                        {t("openGoogleMap")}
                       </div>
                       <div className="w-0 h-4 md:h-6 relative">
                         <svg
@@ -180,20 +203,23 @@ const page = () => {
             <div className="w-full lg:w-2/5 flex flex-col gap-8 md:gap-12">
               <div>
                 <h3 className="text-white text-xl md:text-3xl font-medium font-['Satoshi_Variable'] mb-4">
-                  Our Location
+                  {t("ourLocation")}
                 </h3>
                 <h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold font-['Satoshi_Variable'] capitalize">
-                  Connecting Near and Far
+                  {t("connectingNearFar")}
                 </h2>
               </div>
 
               <div className="space-y-8 md:space-y-12">
                 <div>
                   <h4 className="text-white text-xl md:text-2xl font-bold font-['Satoshi_Variable'] mb-2">
-                    Headquarters
+                    {t("headquarters")}
                   </h4>
                   <p className="text-stone-300 text-lg md:text-2xl font-normal font-['Inter'] leading-relaxed">
-                    Damietta - New Damitta End street 456{" "}
+                    {t("addressLine1")} {t("addressLine2")}
+                  </p>
+                  <p className="text-stone-300 mt-[20px] text-lg md:text-2xl font-normal font-['Inter'] leading-relaxed">
+                    {t("addressLine3")} {t("addressLine4")}
                   </p>
                 </div>
               </div>

@@ -150,5 +150,19 @@
     "description": "Thoughts on design, software and productivity.",
     "bannerTitle": "Welcome to the Reach blog",
     "bannerSubtitle": "Invoicing and Business tips for small businesses and freelancers."
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "subtitleLine1": "Email, call, or complete the form to learn how",
+    "subtitleLine2": "Snappy can solve your messaging problem",
+    "customerSupport": "customer support",
+    "ourLocation": "Our Location",
+    "connectingNearFar": "Connecting Near and Far",
+    "headquarters": "Headquarters",
+    "addressLine1": "Damietta - New Damitta",
+    "addressLine2": "End El-Saeidy Street, next to Al-Azhar Medical College",
+    "openGoogleMap": "Open Google Map",
+    "addressLine3": "Kingdom of Saudi Arabia",
+    "addressLine4": "Jeddah - Emaar Escobar"
   }
 }

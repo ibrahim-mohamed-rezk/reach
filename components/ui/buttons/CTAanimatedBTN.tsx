@@ -69,7 +69,7 @@ const CTAanimatedBTN = ({
             : `group-hover:translate-x-[clamp(1px,var(--cta-shift),1500px)] `) +
           "w-[clamp(13px,3.333335vw,200px)] h-[clamp(5px,2.395835vw,200px)] bg-white rounded-full flex items-center justify-center transition-all"
         }
-        style={{ ["--cta-shift" as any]: ctaShift }}
+        style={{ ["--cta-shift" as string]: ctaShift }}
       >
         <svg
           className="w-[clamp(4px,1.25vw,200px)] h-[clamp(4px,1.25vw,200px)]"

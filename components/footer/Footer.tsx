@@ -197,10 +197,29 @@ const Footer = () => {
                     />
                   </svg>
                 </a>
+                {/* LinkedIn Icon */}
                 <a
-                  href="mailto:reachagency@reachksa.com"
+                  href="https://www.linkedin.com/company/reach-agency-company/posts/?feedView=all"
                   target="_blank"
-                  className="bg-[#111111] w-[clamp(50px,3.437504vw,200px)] h-[clamp(50px,3.437504vw,200px)] flex items-center justify-center rounded-full border border-[#868686] p[clamp(8px,0.833334vw,100px)] hover:bg-[#444444] transition"
+                  className="bg-[#111111] w-[clamp(50px,3.437504vw,200px)] h-[clamp(50px,3.437504vw,200px)] flex items-center justify-center rounded-full border border-[#868686] p-[clamp(8px,0.833334vw,100px)] hover:bg-[#444444] transition"
+                  aria-label="LinkedIn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-[clamp(15px,1.35416667vw,100px)] h-[clamp(15px,1.35416667vw,100px)]"
+                    viewBox="0 0 448 512"
+                    fill="none"
+                  >
+                    <path
+                      fill="white"
+                      d="M100.28 448H7.4V148.9h92.88zm-46.44-340.7C24.09 107.3 0 83.2 0 53.6A53.6 53.6 0 0 1 53.6 0c29.6 0 53.6 24.09 53.6 53.6 0 29.6-24.09 53.7-53.6 53.7zM447.8 448h-92.4V302.4c0-34.7-12.4-58.4-43.3-58.4-23.6 0-37.6 15.9-43.7 31.3-2.3 5.6-2.8 13.4-2.8 21.2V448h-92.5s1.2-241.1 0-266.1h92.4v37.7c12.3-19 34.3-46.1 83.5-46.1 60.9 0 106.7 39.8 106.7 125.4V448z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="mailto:info@reachksa.com"
+                  target="_blank"
+                  className="bg-[#111111] w-[clamp(50px,3.437504vw,200px)] h-[clamp(50px,3.437504vw,200px)] flex items-center justify-center rounded-full border border-[#868686] p-[clamp(8px,0.833334vw,100px)] hover:bg-[#444444] transition"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
