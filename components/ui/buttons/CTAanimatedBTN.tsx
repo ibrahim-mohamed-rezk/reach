@@ -1,8 +1,12 @@
 "use client";
 import { Link } from "@/i18n/navigation";
-import { useEffect } from "react";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
 const CTAanimatedBTN = ({ slug }: { slug: string }) => {
+  const [isRTL, setIsRTL] = useState(false);
+  const t = useTranslations("projects");
+
   useEffect(() => {
     // Add the keyframes to the document if they don't exist
     if (!document.getElementById("cta-shadow-animation")) {
@@ -29,6 +33,10 @@ const CTAanimatedBTN = ({ slug }: { slug: string }) => {
       `;
       document.head.appendChild(style);
     }
+
+    // Detect current document direction (ltr/rtl)
+    const dir = document?.documentElement?.getAttribute("dir");
+    setIsRTL(dir === "rtl");
   }, []);
   return (
     <Link
@@ -39,9 +47,17 @@ const CTAanimatedBTN = ({ slug }: { slug: string }) => {
       }}
     >
       <span className="text-[clamp(2px,1.25vw,100px)] font-semibold">
-        See More
+        {t("seeMore")}
       </span>
-      <div className="absolute top-1/2 transform -translate-y-1/2 start-[1px] md:start-[2px] lg:start-[5px] translate-x-0 duration-[1s] group-hover:translate-x-[clamp(1px,6.67vw,1500px)] w-[clamp(13px,3.333335vw,200px)] h-[clamp(5px,2.395835vw,200px)] bg-white rounded-full flex items-center justify-center transition-all">
+      <div
+        className={
+          `absolute top-1/2 transform -translate-y-1/2 start-[1px] md:start-[2px] lg:start-[5px] translate-x-0 duration-[1s] ` +
+          (isRTL
+            ? "group-hover:-translate-x-[clamp(1px,7.6vw,1500px)] "
+            : "group-hover:translate-x-[clamp(1px,6.67vw,1500px)] ") +
+          "w-[clamp(13px,3.333335vw,200px)] h-[clamp(5px,2.395835vw,200px)] bg-white rounded-full flex items-center justify-center transition-all"
+        }
+      >
         <svg
           className="w-[clamp(4px,1.25vw,200px)] h-[clamp(4px,1.25vw,200px)]"
           viewBox="0 0 24 24"

@@ -13,6 +13,7 @@ const Hero = () => {
           <div className="w-full h-full px-[0px] md:px0 flex items-center justify-center flex-col pt-[clamp(50 px,10.15625vw,195px)] pb-[clamp(150 px,20.3125vw,390px)]">
             <Link
               href="/"
+              dir="ltr"
               className=" px-[clamp(15px,1.5625vw,30px)] max-w-[749px] h-fit relative gap-[clamp(10px,1.458333vw,28px)] flex items-center justify-center bg-hover-animation-container"
             >
               <span className="text-white text-[clamp(35px,5.39218vw,103.53px)] font-semibold font-['Inter'] z-10">

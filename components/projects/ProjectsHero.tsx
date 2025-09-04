@@ -64,6 +64,7 @@ const ProjectsHero = () => {
             {t("hero.line3")}
           </span>
           <span className="text-orange-500 font-extrabold capitalize">
+            {" "}
             {t("hero.line4")}
           </span>
           <span className="text-white">.</span>
