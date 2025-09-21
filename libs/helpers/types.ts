@@ -78,12 +78,21 @@ export interface FeaturedService {
   short_description: string;
 }
 
-// public pagination
 export interface Meta {
   current_page: number;
+  from: number | null;
   last_page: number;
+  links: {
+    url: string | null;
+    label: string;
+    active: boolean;
+  }[];
+  path: string;
   per_page: number;
+  to: number | null;
   total: number;
+  total_featured: number;
+  total_technologies: string[];
 }
 
 // team members
@@ -106,4 +115,3 @@ export interface Client {
   is_active: boolean;
   sort_order: number;
 }
-
