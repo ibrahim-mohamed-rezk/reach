@@ -236,7 +236,7 @@ const Hero = () => {
           </div>
 
           {/* ramadan bg image */}
-          <div className="absolute top-0 z-0 opacity-20 w-full h-full left-0 ease-in-out flex items-center justify-center">
+          {/* <div className="absolute top-0 z-0 opacity-20 w-full h-full left-0 ease-in-out flex items-center justify-center">
             <div className="w-full h-full bg-gradient-to-t from-black to-transparent">
               <img
                 className="w-full h-full object-cover mix-blend-overlay "
@@ -244,25 +244,25 @@ const Hero = () => {
                 alt="ramadan"
               />
             </div>
-          </div> 
+          </div>  */}
 
           {/* ramadan top right image */}
-           <div className="absolute top-0 right-0 z-0 opacity-80 ease-in-out flex items-center justify-center">
+           {/* <div className="absolute top-0 right-0 z-0 opacity-80 ease-in-out flex items-center justify-center">
             <img
               className="mix-blend-overlay "
               src="/images/ramadanRight.png"
               alt="ramadan"
             />
-          </div> 
+          </div>  */}
 
           {/* ramadan top left image */}
-           <div className="hidden absolute top-0 left-0 opacity-80 z-0 ease-in-out md:flex items-center justify-center">
+           {/* <div className="hidden absolute top-0 left-0 opacity-80 z-0 ease-in-out md:flex items-center justify-center">
             <img
               className="mix-blend-overlay "
               src="/images/ramadanLeft.png"
               alt="ramadan"
             />
-          </div> 
+          </div>  */}
         </div>
       </div>
     </div>
